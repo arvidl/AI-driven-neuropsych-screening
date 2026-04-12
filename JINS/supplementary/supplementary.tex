@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\title{Supplementary Material}
+\author{}
+\date{}
+
+\providecommand{\tightlist}{}
+\providecommand{\passthrough}[1]{#1}
+\setlength{\emergencystretch}{3em}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+  framerule=0.3pt,
+  rulecolor=\color{black!25},
+  backgroundcolor=\color{black!2}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Supplementary Material}
+\rhead{\small AI-driven-neuropsych}
+\rfoot{\thepage}
+
+\titleformat{\section}{\Large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{}{0em}{}
+
+\begin{document}
+\maketitle
+
+\noindent This supplementary document provides a typeset rendering of the prompt-development material preserved in the project repository. It corresponds to the section of \texttt{README.md} beginning with \texttt{AI-driven Neuropsychological screening and report design}. The current manuscript also references separate attachment files for the two illustrative case reports.
+
+\section*{Rendered Project Material}
+
+\noindent For documentation purposes, the original verbatim supplement source has been preserved as \texttt{supplementary\_verbatim\_legacy.tex}. The present file renders the same project material in a more manuscript-like layout while preserving the original structure, headings, lists, tables, and code blocks.
+
+\input{rendered_prompt_source.tex}
+
+\end{document}

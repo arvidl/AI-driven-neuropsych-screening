@@ -1,0 +1,220 @@
+{
+  "patient_id": "subj_001",
+  "demographics": {
+    "age": 38.0,
+    "gender": "M",
+    "education": null,
+    "ibs_status": "IBS",
+    "ibs_subtype": "D",
+    "ibs_severity": 195.0
+  },
+  "domain_findings": {
+    "sleep_BIS": {
+      "scores": {
+        "total": 16.0,
+        "Q1": 0.0,
+        "Q2": 0.0,
+        "Q3": 3.0,
+        "Q4": 5.0,
+        "Q5": 5.0,
+        "Q6": 3.0
+      },
+      "percentile_in_cohort": 59.3,
+      "z_score": 0.16,
+      "classification": "Moderate",
+      "interpretation": "BIS total = 16.0 (Moderate). Cohort percentile: 59th. z = +0.16. This indicates clinically significant insomnia symptoms that likely impact daytime functioning and cognitive performance.",
+      "flags": [
+        "Clinically elevated insomnia",
+        "Multiple items >=3 days/week: Q3, Q4, Q5, Q6"
+      ]
+    },
+    "attention_CPT": {
+      "scores": {
+        "Detectability": 60.0,
+        "Omissions": 56.0,
+        "Commissions": 56.0,
+        "HRT": 46.0,
+        "HRT_SD": 52.0,
+        "Perseverations": 45.0,
+        "Variability": 47.0
+      },
+      "percentiles": {
+        "Detectability": 95.6,
+        "Omissions": 97.1,
+        "Commissions": 73.5,
+        "HRT": 46.6,
+        "HRT_SD": 87.3,
+        "Perseverations": 11.8,
+        "Variability": 62.4
+      },
+      "percentile_in_cohort": 95.6,
+      "z_score": 1.63,
+      "interpretation": "CPT Detectability (d') T=60.0 (96th percentile in cohort, z=+1.63). Elevated metrics: Detectability mildly elevated (T=60). This pattern suggests difficulties with sustained attention and/or response control.",
+      "flags": [
+        "Detectability mildly elevated (T=60)"
+      ]
+    },
+    "fatigue_Chalder": {
+      "scores": {
+        "chalder_bimodal_total": 3.0,
+        "TFS_Chalder": 3.0,
+        "items_endorsed": 3
+      },
+      "percentile_in_cohort": 45.2,
+      "z_score": -0.36,
+      "classification": "No significant fatigue",
+      "interpretation": "Chalder Fatigue bimodal total = 3.0 (3/11 items endorsed). Classification: No significant fatigue. Cohort percentile: 45th. No significant fatigue indicated.",
+      "flags": []
+    },
+    "emotional_distress_HADS": {
+      "scores": {
+        "HADS_A": 2.0,
+        "HADS_D": 2.0,
+        "HADS_total": 4.0
+      },
+      "percentile_in_cohort": {
+        "anxiety": 16.7,
+        "depression": 39.2
+      },
+      "z_scores": {
+        "anxiety": -1.06,
+        "depression": -0.55
+      },
+      "classification": {
+        "anxiety": "Normal",
+        "depression": "Normal"
+      },
+      "interpretation": "HADS Anxiety = 2.0 (Normal, 17th %ile). HADS Depression = 2.0 (Normal, 39th %ile). Emotional functioning within normal limits.",
+      "flags": []
+    },
+    "neurocognition_RBANS": {
+      "scores": {
+        "Immediate Memory": -0.27,
+        "Visuospatial": 0.56,
+        "Language": -0.06,
+        "Attention": 0.42,
+        "Delayed Memory": 0.53,
+        "Recognition": -0.27,
+        "Total Scale": 233.0
+      },
+      "percentiles": {
+        "Immediate Memory": 34.8,
+        "Visuospatial": 73.0,
+        "Language": 41.7,
+        "Attention": 71.6,
+        "Delayed Memory": 73.0,
+        "Recognition": 28.4,
+        "Total Scale": 57.4
+      },
+      "z_scores": {
+        "Immediate Memory": -0.34,
+        "Visuospatial": 0.74,
+        "Language": -0.08,
+        "Attention": 0.51,
+        "Delayed Memory": 0.63,
+        "Recognition": -0.34,
+        "Total Scale": 0.12
+      },
+      "classifications": {
+        "Immediate Memory": "Low cohort position",
+        "Visuospatial": "Relative strength",
+        "Language": "Mid cohort position",
+        "Attention": "Relative strength",
+        "Delayed Memory": "Relative strength",
+        "Recognition": "Low cohort position",
+        "Total Scale": "Mid cohort position"
+      },
+      "percentile_in_cohort": 57.4,
+      "z_score": 0.12,
+      "interpretation": "RBANS Sum Raw = 233.0 (57.4th cohort percentile). Interpretation is based on the cleaned dataset's raw subtests and cohort-relative summaries rather than the older RBANS index-score fields. The raw RBANS profile is broadly mid-range across domains. ",
+      "flags": [],
+      "raw_subtests": {
+        "Word List": 26.0,
+        "Story Memory": 20.0,
+        "Figure Copy": 20.0,
+        "Line Orientation": 19.0,
+        "Picture Naming": 10.0,
+        "Semantic Fluency": 19.0,
+        "Digit Span": 11.0,
+        "Coding": 52.0,
+        "Word List Recall": 8.0,
+        "Story Recall": 11.0,
+        "Word List Recognition": 19.0,
+        "Figure Recall": 18.0
+      },
+      "raw_subtest_percentiles": {
+        "Word List": 16.7,
+        "Story Memory": 72.5,
+        "Figure Copy": 68.6,
+        "Line Orientation": 63.2,
+        "Picture Naming": 59.8,
+        "Semantic Fluency": 30.9,
+        "Digit Span": 76.5,
+        "Coding": 58.3,
+        "Word List Recall": 55.4,
+        "Story Recall": 79.4,
+        "Word List Recognition": 16.7,
+        "Figure Recall": 61.8
+      }
+    }
+  },
+  "cross_domain_patterns": "Sleep-attention link: Insomnia co-occurs with CPT attention deficits. Sleep disruption degrades vigilance and sustained attention via reduced thalamo-cortical arousal regulation (Krause et al., 2017). Treating the sleep disturbance may improve attentional performance. Gut-brain axis involvement: As an IBS patient with elevated scores in sleep, this profile is consistent with gut-brain axis mediated effects. IBS-associated visceral hypersensitivity activates the hypothalamic-pituitary-adrenal (HPA) axis and alters serotonergic signaling, which can drive insomnia, fatigue, and affective dysregulation (Mayer et al., 2015). An integrated treatment approach addressing both gastrointestinal and neuropsychological symptoms is warranted.",
+  "cohort_context": "Patient belongs to the IBS group (n=65 of 105 total). IBS subtype: D (n=24 in cohort). Age 38 (cohort M=37.0, SD=11.8). ",
+  "cohort_summary": {
+    "total_n": 105,
+    "group_counts": {
+      "IBS": 65,
+      "HC": 40
+    }
+  },
+  "reasoning_chain": [
+    "Step 1: Demographic and clinical context — M, age 38, IBS group, IBS subtype D. IBS-SSS=195.",
+    "Step 2: Sleep (BIS) — Total score 16.0, classified as Moderate (cohort 59.3th percentile).",
+    "Step 3: Fatigue (Chalder) — Bimodal total 3.0, No significant fatigue (cohort 45.2th percentile).",
+    "Step 4: Emotional distress (HADS) — Anxiety 2.0 (Normal), Depression 2.0 (Normal).",
+    "Step 5: Sustained attention (CPT) — Detectability T=60.0, Omissions T=56.0, Commissions T=56.0, HRT T=46.0.",
+    "Step 6: Neurocognition (RBANS) — Sum Raw 233.0 at the 57.4th cohort percentile. The interpretation uses raw subtests plus cohort-standardized summary composites. Relative strengths are present in Visuospatial, Attention, Delayed Memory.",
+    "Step 7: Cross-domain integration — Flags span sleep, attention, supporting an interacting symptom pattern.",
+    "Step 8: Prognostic formulation — The prognosis depends mainly on whether the flagged domains respond to targeted follow-up."
+  ],
+  "recommendations": {
+    "therapeutic": [
+      "SLEEP: Prioritize CBT-I and structured sleep-hygiene measures, as insomnia is a likely upstream driver of daytime fatigue and reduced cognitive efficiency.",
+      "ATTENTION: Add compensatory supports for sustained attention, such as task chunking, fewer distractions, and written reminders.",
+      "IBS INTEGRATION: Coordinate neuropsychological follow-up with gastrointestinal care, since gut-brain symptoms may reinforce sleep, fatigue, and mood burden."
+    ],
+    "further_examinations": [
+      "ATTENTION: Repeat CPT or broader attentional testing if problems persist after sleep, mood, or fatigue interventions."
+    ]
+  },
+  "visualizations_generated": {
+    "multi_panel": {
+      "clinical": {
+        "pdf": "subj_001_multipanel_clinical.pdf",
+        "png": "subj_001_multipanel_clinical.png"
+      },
+      "physician": {
+        "pdf": "subj_001_multipanel_physician.pdf",
+        "png": "subj_001_multipanel_physician.png"
+      },
+      "patient": {
+        "pdf": "subj_001_multipanel_patient.pdf",
+        "png": "subj_001_multipanel_patient.png"
+      }
+    },
+    "radar_plot": {
+      "clinical": {
+        "pdf": "subj_001_radar_clinical.pdf",
+        "png": "subj_001_radar_clinical.png"
+      },
+      "physician": {
+        "pdf": "subj_001_radar_physician.pdf",
+        "png": "subj_001_radar_physician.png"
+      },
+      "patient": {
+        "pdf": "subj_001_radar_patient.pdf",
+        "png": "subj_001_radar_patient.png"
+      }
+    }
+  }
+}

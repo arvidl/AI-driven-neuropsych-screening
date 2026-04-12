@@ -1,0 +1,230 @@
+{
+  "patient_id": "subj_048",
+  "demographics": {
+    "age": 31.0,
+    "gender": "F",
+    "education": null,
+    "ibs_status": "IBS",
+    "ibs_subtype": "M",
+    "ibs_severity": 305.0
+  },
+  "domain_findings": {
+    "sleep_BIS": {
+      "scores": {
+        "total": 32.0,
+        "Q1": 2.0,
+        "Q2": 7.0,
+        "Q3": 4.0,
+        "Q4": 7.0,
+        "Q5": 5.0,
+        "Q6": 7.0
+      },
+      "percentile_in_cohort": 97.9,
+      "z_score": 2.13,
+      "classification": "Severe",
+      "interpretation": "BIS total = 32.0 (Severe). Cohort percentile: 98th. z = +2.13. This indicates clinically significant insomnia symptoms that likely impact daytime functioning and cognitive performance.",
+      "flags": [
+        "Clinically elevated insomnia",
+        "Above clinical threshold (>=19)",
+        "Multiple items >=3 days/week: Q2, Q3, Q4, Q5, Q6"
+      ]
+    },
+    "attention_CPT": {
+      "scores": {
+        "Detectability": 46.0,
+        "Omissions": 45.0,
+        "Commissions": 52.0,
+        "HRT": 52.0,
+        "HRT_SD": 50.0,
+        "Perseverations": 48.0,
+        "Variability": 51.0
+      },
+      "percentiles": {
+        "Detectability": 47.1,
+        "Omissions": 44.1,
+        "Commissions": 64.2,
+        "HRT": 73.5,
+        "HRT_SD": 80.4,
+        "Perseverations": 73.5,
+        "Variability": 85.6
+      },
+      "percentile_in_cohort": 47.1,
+      "z_score": -0.15,
+      "interpretation": "CPT Detectability (d') T=46.0 (47th percentile in cohort, z=-0.15). All CPT metrics within normal limits. Sustained attention and response control appear intact.",
+      "flags": []
+    },
+    "fatigue_Chalder": {
+      "scores": {
+        "chalder_bimodal_total": 11.0,
+        "TFS_Chalder": 11.0,
+        "items_endorsed": 11
+      },
+      "percentile_in_cohort": 97.0,
+      "z_score": 1.71,
+      "classification": "Significant fatigue",
+      "interpretation": "Chalder Fatigue bimodal total = 11.0 (11/11 items endorsed). Classification: Significant fatigue. Cohort percentile: 97th. Clinically significant fatigue present. This may impact attention, processing speed, and overall cognitive efficiency.",
+      "flags": [
+        "Chalder caseness (bimodal total=11 >= 4)"
+      ]
+    },
+    "emotional_distress_HADS": {
+      "scores": {
+        "HADS_A": 12.0,
+        "HADS_D": 6.0,
+        "HADS_total": 18.0
+      },
+      "percentile_in_cohort": {
+        "anxiety": 85.5,
+        "depression": 76.9
+      },
+      "z_scores": {
+        "anxiety": 1.27,
+        "depression": 0.75
+      },
+      "classification": {
+        "anxiety": "Clinical",
+        "depression": "Normal"
+      },
+      "interpretation": "HADS Anxiety = 12.0 (Clinical, 85th %ile). HADS Depression = 6.0 (Normal, 77th %ile). Clinically significant emotional distress present. This is likely to affect cognitive test performance, particularly attention and executive function.",
+      "flags": [
+        "HADS-A clinical (12)"
+      ]
+    },
+    "neurocognition_RBANS": {
+      "scores": {
+        "Immediate Memory": -0.55,
+        "Visuospatial": 0.06,
+        "Language": -1.32,
+        "Attention": -0.09,
+        "Delayed Memory": -0.84,
+        "Recognition": -0.41,
+        "Total Scale": 213.0
+      },
+      "percentiles": {
+        "Immediate Memory": 22.1,
+        "Visuospatial": 45.6,
+        "Language": 5.9,
+        "Attention": 46.1,
+        "Delayed Memory": 17.2,
+        "Recognition": 24.0,
+        "Total Scale": 14.7
+      },
+      "z_scores": {
+        "Immediate Memory": -0.69,
+        "Visuospatial": 0.08,
+        "Language": -1.74,
+        "Attention": -0.11,
+        "Delayed Memory": -1.01,
+        "Recognition": -0.5,
+        "Total Scale": -0.96
+      },
+      "classifications": {
+        "Immediate Memory": "Relative weakness",
+        "Visuospatial": "Mid cohort position",
+        "Language": "Marked relative weakness",
+        "Attention": "Mid cohort position",
+        "Delayed Memory": "Relative weakness",
+        "Recognition": "Relative weakness",
+        "Total Scale": "Relative weakness"
+      },
+      "percentile_in_cohort": 14.7,
+      "z_score": -0.96,
+      "interpretation": "RBANS Sum Raw = 213.0 (14.7th cohort percentile). Interpretation is based on the cleaned dataset's raw subtests and cohort-relative summaries rather than the older RBANS index-score fields. Relative weaknesses are most evident in Immediate Memory, Language, Delayed Memory, Recognition. ",
+      "flags": [
+        "Language: marked relative weakness within cohort",
+        "RBANS Sum Raw falls in the lowest cohort range"
+      ],
+      "raw_subtests": {
+        "Word List": 25.0,
+        "Story Memory": 19.0,
+        "Figure Copy": 20.0,
+        "Line Orientation": 17.0,
+        "Picture Naming": 8.0,
+        "Semantic Fluency": 23.0,
+        "Digit Span": 11.0,
+        "Coding": 43.0,
+        "Word List Recall": 4.0,
+        "Story Recall": 10.0,
+        "Word List Recognition": 20.0,
+        "Figure Recall": 13.0
+      },
+      "raw_subtest_percentiles": {
+        "Word List": 11.8,
+        "Story Memory": 57.4,
+        "Figure Copy": 68.6,
+        "Line Orientation": 29.4,
+        "Picture Naming": 3.9,
+        "Semantic Fluency": 59.8,
+        "Digit Span": 76.5,
+        "Coding": 21.6,
+        "Word List Recall": 5.4,
+        "Story Recall": 57.8,
+        "Word List Recognition": 63.2,
+        "Figure Recall": 10.8
+      }
+    }
+  },
+  "cross_domain_patterns": "Insomnia-fatigue co-occurrence: Elevated BIS and Chalder scores together suggest that poor sleep is driving daytime fatigue. Although CPT performance is currently preserved, this combination places the patient at risk for developing attentional difficulties if sleep disturbance persists (Fortier-Brochu et al., 2012). Mood-cognition interaction: Emotional distress (HADS) co-occurs with cognitive difficulties. Anxiety consumes working memory resources through worry-related rumination, while depression slows processing speed and impairs encoding (Castaneda et al., 2008). Both mechanisms can degrade performance on RBANS and CPT independently of any organic pathology. Mood-sleep bidirectional relationship: Both insomnia and emotional distress are elevated, consistent with their well-documented bidirectional association (Baglioni et al., 2011). Insomnia is both a symptom and a maintaining factor for anxiety and depression; treating sleep may yield secondary mood benefits and vice versa. Gut-brain axis involvement: As an IBS patient with elevated scores in sleep, fatigue, mood, this profile is consistent with gut-brain axis mediated effects. IBS-associated visceral hypersensitivity activates the hypothalamic-pituitary-adrenal (HPA) axis and alters serotonergic signaling, which can drive insomnia, fatigue, and affective dysregulation (Mayer et al., 2015). An integrated treatment approach addressing both gastrointestinal and neuropsychological symptoms is warranted.",
+  "cohort_context": "Patient belongs to the IBS group (n=65 of 105 total). IBS subtype: M (n=32 in cohort). Age 31 (cohort M=37.0, SD=11.8). ",
+  "cohort_summary": {
+    "total_n": 105,
+    "group_counts": {
+      "IBS": 65,
+      "HC": 40
+    }
+  },
+  "reasoning_chain": [
+    "Step 1: Demographic and clinical context — F, age 31, IBS group, IBS subtype M. IBS-SSS=305.",
+    "Step 2: Sleep (BIS) — Total score 32.0, classified as Severe (cohort 97.9th percentile).",
+    "Step 3: Fatigue (Chalder) — Bimodal total 11.0, Significant fatigue (cohort 97.0th percentile).",
+    "Step 4: Emotional distress (HADS) — Anxiety 12.0 (Clinical), Depression 6.0 (Normal).",
+    "Step 5: Sustained attention (CPT) — Detectability T=46.0, Omissions T=45.0, Commissions T=52.0, HRT T=52.0.",
+    "Step 6: Neurocognition (RBANS) — Sum Raw 213.0 at the 14.7th cohort percentile. The interpretation uses raw subtests plus cohort-standardized summary composites. Relative weaknesses are present in Immediate Memory, Language, Delayed Memory, Recognition, Total Scale.",
+    "Step 7: Cross-domain integration — Flags span sleep, fatigue, mood, cognition, supporting an interacting symptom pattern.",
+    "Step 8: Prognostic formulation — Mood and cognitive inefficiency co-occur, so emotional stabilization may improve concentration and reduce apparent cognitive burden."
+  ],
+  "recommendations": {
+    "therapeutic": [
+      "SLEEP: Prioritize CBT-I and structured sleep-hygiene measures, as insomnia is a likely upstream driver of daytime fatigue and reduced cognitive efficiency.",
+      "FATIGUE: Use paced activity scheduling and screen for reversible medical contributors such as anemia, thyroid disease, and vitamin deficiency.",
+      "FATIGUE-SLEEP LINK: Reassess fatigue after sleep-focused treatment before escalating to more extensive fatigue workup.",
+      "ANXIETY: Consider CBT-based anxiety treatment; anxious arousal can worsen sleep and concentration.",
+      "IBS INTEGRATION: Coordinate neuropsychological follow-up with gastrointestinal care, since gut-brain symptoms may reinforce sleep, fatigue, and mood burden."
+    ],
+    "further_examinations": [
+      "COGNITION: Follow up the cohort-relative RBANS weaknesses in Immediate Memory, Language, Delayed Memory, Recognition, Total Scale if the patient reports matching day-to-day difficulties.",
+      "COGNITION: If cognitive complaints persist despite treating sleep, fatigue, and mood contributors, consider expanded neuropsychological assessment.",
+      "IBS: High symptom burden supports close gastroenterology follow-up alongside symptom-targeted psychological care."
+    ]
+  },
+  "visualizations_generated": {
+    "multi_panel": {
+      "clinical": {
+        "pdf": "subj_048_multipanel_clinical.pdf",
+        "png": "subj_048_multipanel_clinical.png"
+      },
+      "physician": {
+        "pdf": "subj_048_multipanel_physician.pdf",
+        "png": "subj_048_multipanel_physician.png"
+      },
+      "patient": {
+        "pdf": "subj_048_multipanel_patient.pdf",
+        "png": "subj_048_multipanel_patient.png"
+      }
+    },
+    "radar_plot": {
+      "clinical": {
+        "pdf": "subj_048_radar_clinical.pdf",
+        "png": "subj_048_radar_clinical.png"
+      },
+      "physician": {
+        "pdf": "subj_048_radar_physician.pdf",
+        "png": "subj_048_radar_physician.png"
+      },
+      "patient": {
+        "pdf": "subj_048_radar_patient.pdf",
+        "png": "subj_048_radar_patient.png"
+      }
+    }
+  }
+}
