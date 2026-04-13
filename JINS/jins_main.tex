@@ -124,7 +124,9 @@ In outpatient neuropsychological practice, clinicians often begin their pre-exam
 
 This helps explain why artificial intelligence has become increasingly relevant to neuropsychology. In a recent perspective article, \textcite{LundervoldAJ2025} proposed the framework of \textit{precision neuropsychology}, within which incorporating AI into practice presents both opportunities and risks. Used carefully and ethically, AI may help reduce clinician workload, improve access to services, and extend aspects of neuropsychological care to underserved populations \citep{Kronenberger2025}. At the same time, such use must remain transparent, clinically grounded, and subject to professional oversight so that computational support strengthens rather than displaces clinical judgment \citep{LundervoldAJ2025, DeRightPuente2026}.
 
-Despite broader advances in medical AI \citep{Thirunavukarasu2023, Meskó2023}, relatively few concrete changes in everyday neuropsychological practice can be attributed directly to AI adoption \citep{DeRightPuente2026}. Existing applications have mainly focused on computerized testing, automated scoring, and diagnostic classification \citep{Parsons2018Tech, Andersen2026ROCF}. These developments are useful for organizing scores and findings, but they do not address the interpretive task at the center of neuropsychological work: bringing cognitive, emotional, and functional findings together into a coherent clinical formulation. In addition, neuropsychological reports must be tailored to the differing needs of patients and referral sources \citep{Postal2018ReportWriting}.
+Despite broader advances in medical AI \citep{Thirunavukarasu2023, Meskó2023}, relatively few concrete changes in everyday neuropsychological practice can be attributed directly to AI adoption \citep{DeRightPuente2026}. Existing applications have mainly focused on computerized testing, automated scoring, and diagnostic classification \citep{Parsons2018Tech, Andersen2026ROCF}. 
+These developments are useful for organizing scores and findings, but they do not address the interpretive task at the center of neuropsychological work: 
+bringing cognitive, emotional, and genetic and environmental factors together into a coherent clinical formulation. In addition, neuropsychological reports must be tailored to the differing needs of patients and referral sources \citep{Postal2018ReportWriting}.
 
 This leaves an important gap between what automated systems can calculate and what clinicians need before meeting the patient. In practice, the neuropsychologist must consider not only whether a domain is elevated, but also how findings relate to one another and which aspects of the examination deserve particular attention. Support at this stage therefore requires more than score reporting. It requires a structured way of relating findings across domains so that screening data can inform examination planning in a clinically meaningful way.
 
@@ -142,7 +144,8 @@ The cohort comprises $N = 105$ adults: 65 patients meeting Rome IV criteria for 
 
 All analyses were performed on an analysis-ready cohort file derived from the source dataset after documented data cleaning, while the raw source file was preserved unchanged. The cleaning decisions are documented in the project repository.
 
-Demographic characteristics are summarized in Table~\ref{tab:demographics}. The IBS group included three subtypes: IBS-D (diarrhea-predominant, $n = 24$), IBS-C (constipation-predominant, $n = 9$), and IBS-M (mixed, $n = 32$). IBS symptom severity was assessed using the IBS-SSS (range 0--500; available for $n = 56$ IBS patients), with a mean of $M = 273.8$ ($SD = 71.3$).
+Demographic characteristics are summarized in Table~\ref{tab:demographics}. The IBS group included three subtypes: IBS-D (diarrhea-predominant, $n = 24$), IBS-C (constipation-predominant, $n = 9$), and IBS-M (mixed, $n = 32$). 
+IBS symptom severity was assessed using the Irritable Bowel Syndrome Severity Scoring System, IBS-SSS (range 0--500; available for $n = 56$ IBS patients), with a mean of $M = 273.8$ ($SD = 71.3$).
 
 \subsection{Neuropsychological instruments}
 
@@ -157,7 +160,7 @@ Five assessment domains were evaluated using established instruments with known 
 
     \item \textbf{Emotional distress -- HADS} \textit{[self-report]:} Anxiety (HADS-A) and Depression (HADS-D) subscales, each 0--21 \citep{Zigmond1983}. Pipeline cutoffs: Normal ($\leq 7$), Borderline (8--10), Clinical ($\geq 11$) \citep{Bjelland2002}.
 
-    \item \textbf{Neurocognition -- RBANS} \textit{[clinician-administered]:} Ten subtests assessing the five standard cognitive domains (Immediate Memory, Visuospatial/Constructional, Language, Attention, Delayed Memory) were administered by a trained psychometrician in approximately 30 minutes using the Norwegian version \citep{Randolph2013NO}. In the pipeline, raw RBANS subtests are standardized within the cohort and averaged into domain summary composites aligned with these five domains, while recognition scores are retained as an auxiliary summary and \texttt{RBANS\_Sum\_Raw} is used as a broad total-score indicator. Cognitive flags are raised for marked cohort-relative weakness (domain-summary or total-score percentile $< 16$).
+    \item \textbf{Neurocognition -- RBANS} \textit{[clinician-administered]:} Ten subtests assessing the five cognitive domains (Immediate Memory, Visuospatial/Constructional, Language, Attention, Delayed Memory) were administered by a trained psychometrician in approximately 30 minutes using the Norwegian version \citep{Randolph2013NO}. In the pipeline, raw RBANS subtests are standardized within the cohort and averaged into domain summary composites aligned with these five domains, while recognition scores are retained as an auxiliary summary and \texttt{RBANS\_Sum\_Raw} is used as a broad total-score indicator. Cognitive flags are raised for marked cohort-relative weakness (domain-summary or total-score percentile $< 16$).
 \end{enumerate}
 
 \noindent
@@ -254,7 +257,7 @@ The pipeline generates two categories of recommendations relevant to neuropsycho
 
 \subsubsection{Computational reproducibility}
 
-The pipeline source code and anonymised example outputs are available in a public GitHub repository (\url{https://github.com/arvidl/AI-driven-neuropsych}), together with an environment specification file (\texttt{environment.yml}) for dependency replication. The cohort dataset is not publicly available due to ethics approval conditions; reproducibility at the dataset level is supported by documentation of cleaning decisions in the repository. The complete audience-tailored reports generated for the two case illustrations are provided as supplementary files.
+The pipeline source code and anonymised example outputs are available in a public GitHub repository (\url{https://github.com/arvidl/AI-driven-neuropsych-screening}), together with an environment specification file (\texttt{environment.yml}) for dependency replication. The cohort dataset is not publicly available due to ethics approval conditions; reproducibility at the dataset level is supported by documentation of cleaning decisions in the repository. The complete audience-tailored reports generated for the two case illustrations are provided as supplementary files.
 
 
 \subsection{Statistical analysis}
@@ -510,7 +513,8 @@ We developed and demonstrated a deterministic, rule-based pipeline for automated
 
 Its primary purpose is to provide the neuropsychologist with a structured synthesis of available screening data before the clinical encounter. In this way, it may reduce the time needed for pre-examination preparation and enable a more targeted clinical interview and test selection.
 
-The main contribution of the framework is not automated diagnosis, but automated integration. Rather than merely organizing scores, the pipeline combines domain-specific findings into a preliminary clinical formulation and expresses that formulation in formats adapted to different end users. The case illustrations suggest that this approach can differentiate between relatively circumscribed and broader multi-domain profiles while also making explicit where subsequent clinician review remains essential.
+The main contribution of the framework is not automated diagnosis, but automated integration. Rather than merely organizing scores, the pipeline combines domain-specific findings into a preliminary clinical formulation and expresses that formulation in formats adapted to different end users. 
+The case illustrations suggest that this approach can differentiate between relatively circumscribed and broader multi-domain profiles while also making explicit where subsequent clinician review remains essential.
 
 \subsection{Relation to prior work}
 
@@ -530,7 +534,19 @@ The cross-domain component is particularly relevant to neuropsychological practi
 
 The audience-tailored outputs address a related practical problem. Referring physicians often prefer brief, targeted summaries, whereas patients and family members benefit from more accessible language and visual presentation \citep{Postal2018ReportWriting, Postal2024, Gruters2022}. Producing such variants manually is time-consuming, and in practice many clinicians have little opportunity to generate separate summaries for different stakeholders. By producing distinct but data-equivalent outputs for clinical peers, physicians, and patients, the framework attempts to support communication without requiring the clinician to create multiple reports from scratch.
 
-The case illustrations also clarify an important boundary condition of the framework: the pipeline produces a structured preliminary formulation, not a complete clinical interpretation. In both cases, the rule-based report identified the major domain findings and generated clinically plausible recommendations, but the subsequent clinician interpretation added inferences that were not explicitly captured by the rules alone. In Case~1, this concerned the significance of the convergent but relatively subtle pattern spanning sleep, attention, and verbal learning. In Case~2, it concerned the clinical importance of executive function as a possible moderator of response to anxiety-focused intervention.
+%The case illustrations also clarify an important boundary condition of the framework: 
+%the pipeline produces a structured preliminary formulation, not a complete clinical interpretation. 
+%In both cases, the rule-based report identified the major domain findings and generated clinically plausible recommendations, but the subsequent clinician interpretation added inferences that were not explicitly captured by the rules alone. 
+%In Case~1, this concerned the significance of the convergent but relatively subtle pattern spanning sleep, attention, and verbal learning. 
+%In Case~2, it concerned the clinical importance of executive function as a possible moderator of response to anxiety-focused intervention.
+
+The case illustrations clarify an important boundary condition of the framework: 
+the pipeline produces a structured preliminary formulation, not a complete clinical interpretation. 
+In both cases, the rule-based report identified the major domain findings and generated clinically plausible recommendations, but clinician interpretation added inferences the rules alone did not capture. 
+In Case 1, this concerned the mechanistic significance of reduced detectability, specifically, that a hypervigilance-driven criterion shift may operate independently of sleep quality, warranting comprehensive examination concurrent with rather than following sleep treatment. 
+In Case 2, it concerned the subtest-level specificity of the RBANS profile: the severity of the naming deficit and the stark dissociation between preserved attention and compromised memory and language are not typical signatures of sleep disruption or anxiety, raising the possibility of a primary cognitive vulnerability that made immediate neuropsychological follow-up clinically indicated rather than deferrable. 
+Together, these cases illustrate that rule-based reasoning performs well in integrating domain-level findings, but that clinician interpretation remains essential for recognizing mechanistic dissociations, evaluating profile specificity, and determining the timing and sequencing of intervention and further assessment.
+
 
 The framework is therefore best understood as clinician-supervised decision support. Rules encode population-level evidence and predefined thresholds, whereas a skilled neuropsychologist integrates contextual factors, domain knowledge, clinical experience, and the patient's own account of difficulties. The pipeline does not diagnose and does not interact with patients; all outputs require professional review and may need to be modified when factors such as language, education, culture, sensory limitations, or referral context alter the meaning of the data. In this respect, the framework may extend efficiency and consistency while preserving the neuropsychologist's interpretive authority \citep{LundervoldAJ2025}.
 
@@ -566,7 +582,10 @@ The authors declare no conflicts of interest.
 
 \section*{Data Availability Statement}
 
-The cohort dataset contains clinical neuropsychological data collected under ethics approval and is not publicly available due to participant confidentiality and ethics approval conditions. Data may be made available upon reasonable request to the corresponding author, subject to institutional data sharing agreements. The pipeline source code and anonymised example outputs are openly available at \url{https://github.com/arvidl/AI-driven-neuropsych}. The complete audience-tailored reports for the two case illustrations are provided as Supplementary Material~S2 and~S3.
+The cohort dataset contains clinical neuropsychological data collected under ethics approval and is not publicly available due to participant confidentiality and ethics approval conditions. Data may be made available upon reasonable request to the corresponding author, subject to institutional data sharing agreements. 
+The pipeline source code and anonymised example outputs are openly available 
+at \url{https://github.com/arvidl/AI-driven-neuropsych-screening}. 
+The complete audience-tailored reports for the two case illustrations are provided as Supplementary Material~S2 and~S3.
 
 % ============================================================================
 % SUPPLEMENTARY MATERIALS
