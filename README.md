@@ -1,5 +1,7 @@
 # AI-driven-neuropsych-screening
 
+_Astri J. Lundervold, Birgitte Berentsen, and Arvid Lundervold:_ <br>**"An AI-Initiated, Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology"** (submitted)
+
 Paper-and-code repository for the blinded neuropsychological screening pipeline and the manuscript artifacts built around it.
 
 ## What This Repo Contains
@@ -16,9 +18,9 @@ Paper-and-code repository for the blinded neuropsychological screening pipeline 
 - The anonymized case reports:
   `JINS/case_1_report.pdf`, `JINS/case_2_report.pdf`
 - The original Table 1 notebook retained for provenance:
-  `notebooks/03_table_1_generation.ipynb`
+  `notebooks/01_table_1_generation.ipynb`
 - A blinded-only notebook for the reproducible subset of Table 1:
-  `notebooks/03_table_1_generation_blinded.ipynb`
+  `notebooks/02_table_1_generation_blinded.ipynb`
 
 ## Reproducibility Scope
 
@@ -40,7 +42,7 @@ This repository also ships canonical paper artifacts that are preserved as-is:
 
 The published Table 1 in `JINS/jins_main.tex` is kept unchanged.
 
-The new notebook `notebooks/03_table_1_generation_blinded.ipynb` reproduces the subset of Table 1 that is derivable from the blinded dataset only:
+The new notebook `notebooks/02_table_1_generation_blinded.ipynb` reproduces the subset of Table 1 that is derivable from the blinded dataset only:
 
 - age
 - female percentage
@@ -54,7 +56,7 @@ Two parts of the published Table 1 are not reproducible from the blinded CSV alo
 - `Education`
 - RBANS index-score rows
 
-The original `notebooks/03_table_1_generation.ipynb` is included for manuscript provenance, but it expects a non-public cleaned cohort file and is not the primary public reproduction path in this repository.
+The original `notebooks/01_table_1_generation.ipynb` is included for manuscript provenance, but it expects a non-public cleaned cohort file and is not the primary public reproduction path in this repository.
 
 ## Environment Setup
 
@@ -101,7 +103,7 @@ full cohort CSV when that file is present, and otherwise falls back to the
 blinded public CSV shipped in this repository. In the public repository, that
 means the default CLI path is safe to run without extra data files.
 
-Run the full blinded cohort:
+Run the full blinded cohort (about 8 min 30 s on a MBP M4 Max):
 
 ```bash
 python scripts/neuropsych_subj_pipeline.py --all
@@ -122,7 +124,7 @@ manuscript-linked subject outputs.
 
 Start Jupyter and open:
 
-- `notebooks/03_table_1_generation_blinded.ipynb`
+- `notebooks/02_table_1_generation_blinded.ipynb`
 
 That notebook loads `data/BGA_merged_all_20260208_cleaned_for_analysis_blinded.csv`, computes the reproducible subset of Table 1, displays a manuscript-style summary table, and emits LaTeX for the subset only.
 
