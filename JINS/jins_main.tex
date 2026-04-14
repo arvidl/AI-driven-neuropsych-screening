@@ -91,7 +91,7 @@ Arvid Lundervold\textsuperscript{c,d}
 \textsuperscript{*}Corresponding author: \href{mailto:astri.lundervold@uib.no}{astri.lundervold@uib.no}\\[4pt]
 ORCID: Astri J.\ Lundervold \href{https://orcid.org/0000-0002-6819-6164}{0000-0002-6819-6164};\quad
 Birgitte Berentsen \href{https://orcid.org/0000-0003-3574-7078}{0000-0003-3574-7078};\\
-Arvid Lundervold \href{https://orcid.org/0000-0002-0032-4182}{0000-0002-0032-4182} {\tiny v. 2026-03-27; 2026-04-09; 2026-04-13}
+Arvid Lundervold \href{https://orcid.org/0000-0002-0032-4182}{0000-0002-0032-4182} {\tiny v. Overleaf 2026-04-14}
 }
 \end{center}
 
@@ -130,7 +130,9 @@ bringing cognitive, emotional, and genetic and environmental factors together in
 
 This leaves an important gap between what automated systems can calculate and what clinicians need before meeting the patient. In practice, the neuropsychologist must consider not only whether a domain is elevated, but also how findings relate to one another and which aspects of the examination deserve particular attention. Support at this stage therefore requires more than score reporting. It requires a structured way of relating findings across domains so that screening data can inform examination planning in a clinically meaningful way.
 
-IBS provides a useful context for examining this challenge. It is a common functional gastrointestinal disorder affecting approximately 14\% of the global population and associated with chronic abdominal pain, altered bowel habits, and reduced quality of life \citep{Arif2025IBS}. Through the gut--brain axis \citep{Mayer2015, Cryan2019}, IBS may also be linked to sleep disturbance \citep{Tu2017}, fatigue \citep{Han2016}, emotional symptoms such as anxiety and depression \citep{Zamani2019}, and more subtle cognitive difficulties \citep{Kennedy2012, Billing2024}. Because these difficulties often co-occur and may influence one another, IBS offers a clinically relevant context for examining how multi-domain screening data may be integrated before formal assessment. In the present study, this question is examined using data from the Bergen Brain--Gut--Microbiota study \citep{Berentsen2020}, and the data set presented in the present study overlaps with data analyzed in prior work on psychological distress subgroups in this cohort \citep{LundervoldAJ2024}. Both that study and a subsequent analysis \citep{LundervoldA2026} have shown considerable overlap in neuropsychological profiles between IBS patients and healthy controls, making the full cohort a useful testbed across a broad range of symptom profiles.
+IBS provides a useful context for examining this challenge. It is a common functional gastrointestinal disorder affecting approximately 14\% of the global population and associated with chronic abdominal pain, altered bowel habits, and reduced quality of life \citep{Arif2025IBS}. Through the gut--brain axis \citep{Mayer2015, Cryan2019}, IBS may also be linked to sleep disturbance \citep{Tu2017}, fatigue \citep{Han2016}, emotional symptoms such as anxiety and depression  \citep{staudacher2023irritable}, %\citep{Zamani2019}, 
+and more subtle cognitive difficulties \citep{lam2019cognitive, Billing2024}. %\citep{Kennedy2012, Billing2024}. 
+Because these difficulties often co-occur and may influence one another, IBS offers a clinically relevant context for examining how multi-domain screening data may be integrated before formal assessment. In the present study, this question is examined using data from the Bergen Brain--Gut--Microbiota study \citep{Berentsen2020}, and the data set presented in the present study overlaps with data analyzed in prior work on psychological distress subgroups in this cohort \citep{LundervoldAJ2024}. Both that study and a subsequent analysis \citep{LundervoldA2026} have shown considerable overlap in neuropsychological profiles between IBS patients and healthy controls, making the full cohort a useful testbed across a broad range of symptom profiles.
 
 In this study, we present a fully automated, deterministic pipeline as a proof-of-concept framework for pre-examination screening in outpatient neuropsychological practice. Using five established instruments covering sleep, fatigue, emotional distress, sustained attention, and neurocognitive function, the pipeline applies published cutoffs together with cohort-based interpretive rules to generate a structured clinical overview, visual summaries, and report-ready outputs. It is intended as decision support for the pre-examination phase rather than as an autonomous diagnostic system, and the clinician retains full responsibility for diagnostic and therapeutic conclusions.
 
@@ -331,7 +333,9 @@ $^{\dagger}\chi^2$ test for gender; all others are independent-samples Welch's $
 
 Table~\ref{tab:demographics} summarizes IBS--HC comparisons. Particularly pronounced differences emerged for fatigue (Chalder total, $p < .001$), anxiety (HADS-A, $p < .001$), insomnia (BIS total, $p < .001$), and depression (HADS-D, $p < .001$). CPT Detectability also differed significantly between groups ($p < .01$), and CPT Omissions reached significance as well ($p < .01$). RBANS index scores revealed significant IBS--HC differences for Total Scale ($p < .01$), Immediate Memory ($p < .01$), Attention ($p < .05$), and Delayed Memory ($p < .05$), with non-significant differences for Visuospatial and Language.
 
-These findings remain consistent with the gut--brain axis literature: IBS patients showed elevated insomnia, fatigue, and emotional distress relative to controls \citep{Mayer2015, Cryan2019}. At the same time, these group comparisons are secondary to the main purpose of the paper, which is to demonstrate a transparent deterministic screening pipeline.
+% These findings remain consistent with the gut--brain axis literature: IBS patients showed elevated insomnia, fatigue, and emotional distress relative to controls \citep{Mayer2015, Cryan2019}. 
+These findings remain consistent with the gut-brain axis literature \citep{Cryan2019, Mayer2015}: IBS patients showed elevated insomnia, fatigue, and emotional distress relative to controls.
+At the same time, these group comparisons are secondary to the main purpose of the paper, which is to demonstrate a transparent deterministic screening pipeline.
 
 
 \subsection{Pipeline output summary}
@@ -387,6 +391,8 @@ We present two illustrative cases demonstrating the pipeline's clinical reasonin
 \end{tabularx}
 \end{table}
 
+
+
 \subsubsection{Case 1: IBS patient with circumscribed sleep disturbance}
 
 The patient is a 38-year-old male with IBS-D (moderate severity, IBS-SSS = 195).
@@ -396,8 +402,9 @@ As summarized in Table~\ref{tab:reasoning_chain}, the pipeline produced a relati
 
 The corresponding clinical multi-panel profile and audience-tailored radar plots are shown in Figures~\ref{fig:multipanel_example} and~\ref{fig:radar_trio}. The complete audience-tailored report for this case is provided as Supplementary Material~S2 (\texttt{case\_1\_report.pdf}).
 
-\paragraph{Clinical interpretation after reading the rule-based report.}
-Taken together, the profile appears relatively circumscribed and is most consistent with a pattern warranting monitoring rather than broader immediate intervention beyond sleep-focused treatment. The convergence of moderate insomnia, borderline attentional inefficiency, and possible weakness in verbal learning suggests that sleep disturbance may be the principal upstream contributor. Sleep-focused intervention is therefore indicated as the initial clinical priority; once sleep has stabilised, re-evaluation of attention and verbal learning would help determine whether any residual difficulty reflects a more specific attentional or learning vulnerability independent of sleep disruption.
+% \paragraph{Clinical interpretation after reading the rule-based report.} 
+% Moved after:  --- FIGURE 2: Radar plots ---
+
 
 
 \subsubsection{Case 2: IBS patient with multi-domain involvement}
@@ -409,8 +416,8 @@ As summarized in Table~\ref{tab:reasoning_chain}, the second case showed a broad
 
 The corresponding clinical multi-panel and radar visualizations for this case are shown in Figures~\ref{fig:case2_multipanel_clinical} and~\ref{fig:case2_radar_trio}. The complete audience-tailored report for this case is provided as Supplementary Material~S3 (\texttt{case\_2\_report.pdf}).
 
-\paragraph{Clinical interpretation after reading the rule-based report.}
-This profile supports the need for a more comprehensive neuropsychological follow-up examination aimed at characterising the observed memory weaknesses and clarifying the relative contributions of anxiety, sleep disturbance, fatigue, and possible primary cognitive vulnerability. Of particular clinical relevance is executive function, as reduced cognitive control may limit the patient's capacity to benefit fully from anxiety-focused intervention. Assessment of executive function would therefore be clinically informative, both for refining the cognitive formulation and for guiding treatment planning should impairment be confirmed.
+%\paragraph{Clinical interpretation after reading the rule-based report.}
+% Moved after --- FIGURE 4: Case 2 radar trio ---
 
 
 % --- TABLE 3: Audience design ---
@@ -446,6 +453,10 @@ Patients \& families & Accessible infographic. Plain-language labels, qualitativ
 \label{fig:multipanel_example}
 \end{figure}
 
+
+
+
+
 % --- FIGURE 2: Radar plots ---
 \begin{figure}[H]
 \centering
@@ -469,6 +480,19 @@ Patients \& families & Accessible infographic. Plain-language labels, qualitativ
 \caption{\textbf{Audience-tailored radar plots for Case~1.} All three variants display the same underlying data on a normalized percentile-of-wellness scale (higher = better), but differ in level of detail and visual language. (a) The clinical version uses an expanded 10-spoke layout with $z$-score annotations and a Cohen's $d$ inset. (b) The physician version uses a compact 5-spoke layout with traffic-light coloring. (c) The patient version uses plain-language labels, qualitative anchors, and a warm palette with an interpretive sentence.}
 \label{fig:radar_trio}
 \end{figure}
+
+
+
+\paragraph{Clinical interpretation Case~1 after reading the rule-based report.}
+%Taken together, the profile appears relatively circumscribed and is most consistent with a pattern warranting monitoring rather than broader immediate intervention beyond sleep-focused treatment. The convergence of moderate insomnia, borderline attentional inefficiency, and possible weakness in verbal learning suggests that sleep disturbance may be the principal upstream contributor. Sleep-focused intervention is therefore indicated as the initial clinical priority; once sleep has stabilised, re-evaluation of attention and verbal learning would help determine whether any residual difficulty reflects a more specific attentional or learning vulnerability independent of sleep disruption.
+
+%Tekst etter Figure 2 and 3: 
+Prior to the clinical examination, the available data present a profile that warrants careful consideration in planning the assessment. The convergence of moderate insomnia, borderline attentional inefficiency, and weakness in verbal learning could suggest sleep disturbance as a principal upstream contributor, and sleep-focused intervention may ultimately prove to be the primary clinical priority. However, this interpretation should be held tentatively at this stage. Detectability (d'), a core index of the capacity to discriminate target from non-target stimuli, is of particular concern, as poor performance on this measure may reflect not simply inattentiveness, but a more fundamental difficulty in perceptual-cognitive discrimination. In the context of IBS, hypervigilance toward somatic and threat-related stimuli may lower the response criterion independently of sleep quality, increasing false alarms and reducing detectability even without a primary attentional capacity deficit (Akbari et al., 2025). This mechanism cannot be adequately evaluated from pre-examination data alone. The upcoming examination should therefore be designed to disentangle the relative contributions of sleep disruption and hypervigilance-driven arousal to the attentional profile, and to determine whether the verbal memory difficulties are consistent with sleep-mediated consolidation impairment or reflect a more specific learning vulnerability. A sleep-focused intervention remains strongly indicated, but the full examination should precede any decision to defer broader neuropsychological follow-up.
+
+The key shift in framing here is from interpretation of findings to preparation for examination - the pre-examination data are used to generate hypotheses and prioritize what to look for, rather than to draw conclusions. The final sentence makes the clinical logic explicit: treat the sleep problems, but do not let that delay a thorough examination.
+
+
+
 
 % --- FIGURE 3: Case 2 clinical multi-panel ---
 \begin{figure}[H]
@@ -503,6 +527,14 @@ Patients \& families & Accessible infographic. Plain-language labels, qualitativ
 \end{figure}
 
 
+\paragraph{Clinical interpretation Case~2 after reading the rule-based report.}
+%This profile supports the need for a more comprehensive neuropsychological follow-up examination aimed at characterising the observed memory weaknesses and clarifying the relative contributions of anxiety, sleep disturbance, fatigue, and possible primary cognitive vulnerability. Of particular clinical relevance is executive function, as reduced cognitive control may limit the patient's capacity to benefit fully from anxiety-focused intervention. Assessment of executive function would therefore be clinically informative, both for refining the cognitive formulation and for guiding treatment planning should impairment be confirmed.
+%Case 2: 
+While the AI-generated report appropriately identifies sleep disturbance, fatigue, and anxiety as primary intervention targets, the figures reveal several features that warrant clinical attention beyond what the rule-based output captures. Most notably, the RBANS subtest profile shows a degree of specificity that is difficult to attribute to insomnia or anxiety alone. The Naming subtest falls severely below the cohort mean, a pattern more consistent with a language network vulnerability than with the diffuse processing inefficiency typically associated with sleep disruption or elevated arousal. Fatigue and insomnia tend to impair processing speed, working memory, and retrieval, but not confrontation naming, and this dissociation should prompt careful observation during the examination itself.
+Equally important is the stark contrast visible in the radar plots between preserved attentional performance, with concentration near the 50th percentile, and severely compromised memory and thinking at approximately the 3rd percentile. This degree of dissociation argues against a unitary sleep-fatigue explanation and raises the possibility of a primary cognitive vulnerability operating independently of the functional factors identified by the pipeline.
+Taken together, these observations suggest that comprehensive neuropsychological follow-up should proceed concurrently. The severity and specificity of the cognitive profile visible here justifies prioritizing clarification of the memory and language weaknesses as an immediate clinical step rather than a deferred one.
+
+
 % ============================================================================
 \section{Discussion}
 \label{sec:discussion}
@@ -518,11 +550,13 @@ The case illustrations suggest that this approach can differentiate between rela
 
 \subsection{Relation to prior work}
 
-Traditional template-based systems can populate summaries with scores \citep{Postal2018ReportWriting} but typically provide more limited support for cross-domain reasoning \citep{Donders2020}. The present framework was designed to address that gap by structuring the pre-examination synthesis itself rather than only the reporting of individual test results.
+%Traditional template-based systems can populate summaries with scores \citep{Postal2018ReportWriting} but typically provide more limited support for cross-domain reasoning \citep{Donders2020}. The present framework was designed to address that gap by structuring the pre-examination synthesis itself rather than only the reporting of individual test results.
+Traditional template-based systems can populate summaries with scores but typically provide more limited support for cross-domain reasoning.
 
 A central feature of the pipeline is the eight-step reasoning chain, which mirrors the sequence of integrative judgments clinicians make when reviewing screening data. Rather than listing isolated elevations, it links findings across domains and generates clinically plausible hypotheses about how sleep, fatigue, emotional distress, sustained attention, and broader cognition may interact. In this sense, the framework aims to support both interpretation and communication.
 
-The deterministic architecture is important in this context. Clinicians need to understand \textit{why} a tool generated a particular interpretation, and to be able to challenge it when the clinical picture calls for it. Because every classification, flag, reasoning step, and recommendation traces back to an explicit rule, the pipeline offers transparency, reproducibility, and auditability. This is a practical advantage in clinical neuropsychology, where interpretive judgment is itself a core professional competency and where opaque generative output would be difficult to justify clinically \citep{Ji2023, DeRightPuente2026, Bhayana2024}.
+The deterministic architecture is important in this context. Clinicians need to understand \textit{why} a tool generated a particular interpretation, and to be able to challenge it when the clinical picture calls for it. Because every classification, flag, reasoning step, and recommendation traces back to an explicit rule, the pipeline offers transparency, reproducibility, and auditability. 
+This is a practical advantage in clinical neuropsychology, where interpretive judgment is itself a core professional competency and where opaque generative output would be difficult to justify clinically. %\citep{Ji2023, DeRightPuente2026, Bhayana2024}.
 
 \subsection{Clinical implications}
 
