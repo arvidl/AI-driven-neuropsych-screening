@@ -77,21 +77,22 @@
 \bigskip
 
 % --- Authors ---
-Astri J.\ Lundervold\textsuperscript{a,*},\quad
-Birgitte Berentsen\textsuperscript{b},\quad
-Arvid Lundervold\textsuperscript{c,d}
+Astri J.\ Lundervold\textsuperscript{a,b,*},\quad
+Birgitte Berentsen\textsuperscript{c},\quad
+Arvid Lundervold\textsuperscript{d,e}
 
 \medskip
 
 {\small
 \textsuperscript{a}Department of Clinical and Biological Psychology, University of Bergen, Bergen, Norway\\
-\textsuperscript{b}National Centre for Functional Gastrointestinal Disorders, Department of Medicine, Haukeland University Hospital, Bergen, Norway\\
-\textsuperscript{c}Department of Biomedicine, University of Bergen, Bergen, Norway\\
-\textsuperscript{d}Mohn Medical Imaging and Visualization Centre (MMIV), Department of Radiology, Haukeland University Hospital, Bergen, Norway\\[4pt]
+\textsuperscript{b}Department of Geriatric Medicine, Haraldsplass Deaconess Hospital AS Surgical Clinic, Bergen, Norway\\
+\textsuperscript{c}National Centre for Functional Gastrointestinal Disorders, Department of Medicine, Haukeland University Hospital, Bergen, Norway\\
+\textsuperscript{d}Department of Biomedicine, University of Bergen, Bergen, Norway\\
+\textsuperscript{e}Mohn Medical Imaging and Visualization Centre (MMIV), Department of Radiology, Haukeland University Hospital, Bergen, Norway\\[4pt]
 \textsuperscript{*}Corresponding author: \href{mailto:astri.lundervold@uib.no}{astri.lundervold@uib.no}\\[4pt]
 ORCID: Astri J.\ Lundervold \href{https://orcid.org/0000-0002-6819-6164}{0000-0002-6819-6164};\quad
 Birgitte Berentsen \href{https://orcid.org/0000-0003-3574-7078}{0000-0003-3574-7078};\\
-Arvid Lundervold \href{https://orcid.org/0000-0002-0032-4182}{0000-0002-0032-4182} {\tiny Manuscript version 2026-04-22}
+Arvid Lundervold \href{https://orcid.org/0000-0002-0032-4182}{0000-0002-0032-4182} {\tiny Manuscript version 2026-04-24}
 }
 \end{center}
 
@@ -539,7 +540,7 @@ Taken together, these observations suggest that comprehensive neuropsychological
 
 \subsection{Summary of findings}
 
-We developed and demonstrated a deterministic, rule-based pipeline for automated pre-examination screening in outpatient neuropsychological practice. Applied to a cohort of 105 participants (65 IBS, 40 HC), the pipeline identified clinically significant findings across five assessment domains, generated structured cross-domain reasoning chains, and produced audience-tailored outputs for clinical peers, referring physicians, and patients.
+We developed and demonstrated a deterministic, rule-based pipeline for automated pre-ex\-am\-i\-na\-tion screening in outpatient neuropsychological practice. Applied to a cohort of 105 participants (65 IBS, 40 HC), the pipeline identified clinically significant findings across five assessment domains, generated structured cross-domain reasoning chains, and produced audience-tailored outputs for clinical peers, referring physicians, and patients.
 
 Its primary purpose is to provide the neuropsychologist with a structured synthesis of available screening data before the clinical encounter. In this way, it may reduce the time needed for pre-examination preparation and enable a more targeted clinical interview and test selection.
 
@@ -553,7 +554,7 @@ Traditional template-based systems can populate summaries with scores but typica
 
 A central feature of the pipeline is the eight-step reasoning chain, which mirrors the sequence of integrative judgments clinicians make when reviewing screening data. Rather than listing isolated elevations, it links findings across domains and generates clinically plausible hypotheses about how sleep, fatigue, emotional distress, sustained attention, and broader cognition may interact. In this sense, the framework aims to support both interpretation and communication.
 
-The deterministic architecture is important in this context. Clinicians need to understand \textit{why} a tool generated a particular interpretation, and to be able to challenge it when the clinical picture calls for it. Because every classification, flag, reasoning step, and recommendation traces back to an explicit rule, the pipeline offers transparency, reproducibility, and auditability. 
+The deterministic architecture is important in this context. Clinicians need to understand \textit{why} a tool generated a particular interpretation, and to be able to challenge it when the clinical picture calls for it. Because every classification, flag, reasoning step, and recommendation traces back to an explicit rule, the pipeline offers transparency, reproducibility, and traceability. 
 This is a practical advantage in clinical neuropsychology, where interpretive judgment is itself a core professional competency and where opaque generative output would be difficult to justify clinically. %\citep{Ji2023, DeRightPuente2026, Bhayana2024}.
 
 \subsection{Clinical implications}
@@ -590,15 +591,33 @@ The interpretive scope of the framework is also bounded by the structure of its 
 
 \subsection{Future directions}
 
-Future work should address both clinical translation and further development of the framework. One important direction is to examine how the pipeline performs when paired with cognitive assessment tools that allow a larger proportion of the screening profile to be collected before the first clinic visit. Another is longitudinal application, as repeated processing of patient data could support structured monitoring of symptom change and treatment response over time. Because the pipeline is modular, it may also be extended to additional neuropsychological instruments and clinical populations, allowing evaluation of how well the present reasoning logic generalizes across assessment contexts.
+Future work should address both clinical translation and further development of the framework. 
+One important direction is to examine how the pipeline performs when paired with cognitive assessment tools that allow a 
+larger proportion of the screening profile to be collected before the first clinic visit. 
+Another is longitudinal application, as repeated processing of patient data could support structured monitoring of 
+symptom change and treatment response over time. Because the pipeline is modular, it may also be extended to additional 
+neuropsychological instruments and clinical populations, allowing evaluation of how well the present reasoning logic 
+generalizes across assessment contexts.
 
-Equally important will be studies of usability and implementation in routine care. Evaluation involving neuropsychologists, referring physicians, and patients is needed to determine whether the audience-tailored outputs improve examination planning, clinical communication, and workflow efficiency in practice. Such work should explicitly test performance across patients with differing language backgrounds, levels of digital access, health literacy, and disability-related needs, and should examine whether the audience-tailored outputs are accessible and meaningful to the groups they are intended to serve. In the longer term, integration with electronic health record systems may support use within ordinary clinical workflows, provided that transparency, governance, and professional accountability remain central.
+Equally important will be studies of usability and implementation in routine care. 
+Evaluation involving neuropsychologists, referring physicians, and patients is needed to determine whether 
+the audience-tailored outputs improve examination planning, clinical communication, and workflow efficiency in practice. 
+Such work should explicitly test performance across patients with differing language backgrounds, levels of digital access, 
+health literacy, and disability-related needs, and should examine whether the audience-tailored outputs are 
+accessible and meaningful to the groups they are intended to serve. In the longer term, integration with electronic 
+health record systems may support use within ordinary clinical workflows, provided that transparency, 
+governance, and professional accountability remain central.
+
+This work aligns with recent proposals for measuring progress toward artificial general intelligence (AGI). 
+In a recent technical report, Burnell et al. \cite{burnell2026measuring} address the challenge of characterizing an AI system's cognitive 
+capabilities, arguing that one must evaluate each cognitive faculty robustly and benchmark the system against a 
+meaningful human baseline.
 
 
 \section{Conclusions}
 \label{sec:conclusion}
 
-The present study introduces a proof-of-concept framework for automated pre-examination screening in outpatient neuropsychological practice. Within the limits of the present dataset and rule set, the deterministic pipeline identified clinically relevant findings, generated structured cross-domain hypotheses, and produced audience-tailored outputs for different stakeholders. The framework is intended to support, rather than replace, neuropsychological judgment, and its deterministic architecture offers transparency, auditability, and reproducibility. At the same time, it should be regarded as an initial demonstration rather than as a fully validated model for routine clinical use. Its eventual clinical value will depend on formal validation, usability testing, equitable implementation, and careful integration with assessment workflows.
+The present study introduces a proof-of-concept framework for automated pre-examination screening in outpatient neuropsychological practice. Within the limits of the present dataset and rule set, the deterministic pipeline identified clinically relevant findings, generated structured cross-domain hypotheses, and produced audience-tailored outputs for different stakeholders. The framework is intended to support, rather than replace, neuropsychological judgment, and its deterministic architecture offers transparency, traceability, and reproducibility. At the same time, it should be regarded as an initial demonstration rather than as a fully validated model for routine clinical use. Its clinical value will depend on formal validation, usability testing, and careful integration with assessment workflows.
 
 
 % ============================================================================
@@ -606,7 +625,12 @@ The present study introduces a proof-of-concept framework for automated pre-exam
 % ============================================================================
 \section*{Acknowledgments}
 
-The authors thank the participants in the Bergen Brain--Gut--Microbiota study for their contributions. This work was supported by the University of Bergen. Financial support: The original data collection (B-BGM project) was funded by the Research Council of Norway (grant ID FRIMED-BIO276010), Helse Vest's Research Funding (grant ID HV912243), the Trond Mohn Research Foundation (grant number BFS2018TMT0), and by The Research Council of Norway (project number 294594). The pipeline was developed using open-source Python tools and \LaTeX, and was co-authored with AI assistance (Claude Opus 4.6, Anthropic, accessed via the Cursor IDE [\url{https://cursor.com}], February 2026). The AI coding assistant contributed to writing the Python code, designing the clinical decision rules, authoring the narrative text templates, implementing the visualizations, and drafting portions of the manuscript text for language, clarity, and consistency. All AI-generated content was reviewed, verified, and edited by the authors. The deterministic pipeline uses no AI models at runtime.
+The authors thank the participants in the Bergen Brain--Gut--Microbiota study for their contributions. 
+This work was supported by the University of Bergen. Financial support: The original data collection (B-BGM project) 
+was funded by the Research Council of Norway (grant ID FRIMED-BIO276010), Helse Vest's Research Funding (grant ID HV912243), 
+the Trond Mohn Research Foundation (grant number BFS2018TMT0), and by The Research Council of Norway (project number 294594). 
+The pipeline was developed using open-source Python tools and \LaTeX, and was co-authored with AI assistance 
+(Claude Opus 4.7, Anthropic, accessed via the Cursor IDE [\url{https://cursor.com}], April 2026). The AI coding assistant contributed to writing the Python code, designing the clinical decision rules, authoring the narrative text templates, implementing the visualizations, and drafting portions of the manuscript text for language, clarity, and consistency. All AI-generated content was reviewed, verified, and edited by the authors. The deterministic pipeline uses no AI models at runtime.
 
 \section*{Conflict of Interest}
 

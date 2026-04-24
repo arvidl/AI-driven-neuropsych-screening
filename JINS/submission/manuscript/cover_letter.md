@@ -1,18 +1,18 @@
 # Cover Letter — Journal of the International Neuropsychological Society
 
-**Date:** 2026-04-22
+**Date:** 2026-04-24
 
 **To:** The Editor-in-Chief
 Journal of the International Neuropsychological Society
 Cambridge University Press
 
-**Re:** Manuscript submission — *"An AI-Initiated, Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology"*
+**Re:** Manuscript submission to the Special Issue on **Artificial Intelligence in Neuropsychology** — *"An AI-Initiated, Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology"*
 
 ---
 
 Dear Editor,
 
-We are pleased to submit the enclosed manuscript, *"An AI-Initiated, Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology,"* for consideration as a **Research Article** in the *Journal of the International Neuropsychological Society*. The paper falls squarely within JINS' interest in methodological innovation and clinical decision support that strengthens, rather than displaces, neuropsychological judgment.
+We are pleased to submit the enclosed manuscript, *"An AI-Initiated, Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology,"* for consideration as a **Regular Research Article** in the *Journal of the International Neuropsychological Society*. **This submission is in response to the call for papers for the Special Issue on "Artificial Intelligence in Neuropsychology"** (deadline 15 May 2026), and we have selected that special issue at the corresponding ScholarOne submission step. The paper falls squarely within JINS' interest in methodological innovation and clinical decision support that strengthens, rather than displaces, neuropsychological judgment.
 
 ## Contribution
 
@@ -24,7 +24,7 @@ Two contrasting case illustrations show how the pipeline differentiates a circum
 
 In line with Cambridge University Press's policy on the declaration of AI tools, we note explicitly:
 
-- The pipeline source code and parts of the manuscript text were **co-developed with AI coding assistants** (Anthropic Claude Opus 4.6 and OpenAI GPT-5.4, accessed via the Cursor IDE between February and April 2026).
+- The pipeline source code and parts of the manuscript text were **co-developed with AI coding assistants** (Anthropic Claude Opus 4.7 and OpenAI GPT-5.4, accessed via the Cursor IDE between February and April 2026).
 - All AI-generated content was reviewed, verified, and edited by the authors.
 - **No AI is used at runtime.** The deployed pipeline contains no LLM API calls, no AI client libraries, and no network dependencies. All clinical classifications and recommendations are produced by deterministic, rule-based logic operating on published cutoffs and pre-authored text templates.
 - A full account of AI's role (development time vs. runtime), together with the complete prompt and rule specifications, is provided in Supplementary Material S1.
@@ -40,12 +40,11 @@ In line with Cambridge University Press's policy on the declaration of AI tools,
 
 ## Files included
 
-- Main manuscript (`AI_driven_neuropsych_screening_20260422_docx.docx`) — Word format for typesetting
-- Compiled PDF of the LaTeX source (`jins_main.pdf`) — for review reference
-- Five figure files (Figure 1–5) — separate high-resolution PDF/TIFF
-- Supplementary Material S1 — `supplementary_methods.pdf` (prompt and rule specifications)
-- Supplementary Material S2 — `case_1_report.pdf` (full audience-tailored report, Case 1)
-- Supplementary Material S3 — `case_2_report.pdf` (full audience-tailored report, Case 2)
+- Main manuscript (`AI_driven_neuropsych_screening_20260424.docx`) — Microsoft Word format, JINS-compliant (Times New Roman 12 pt, double-spaced, continuous line numbering, structured Abstract, Statement of Research Significance, ethics statement, [INSERT TABLE/FIGURE x HERE] callouts, all tables and figures placed after the references)
+- Five figure files (Figure 1–5) as separate high-resolution PDFs (vector; ≥ 300 dpi equivalent)
+- Supplementary Material S1 — `S1_supplementary_methods.pdf` (prompt and rule specifications, complete deterministic rule set)
+- Supplementary Material S2 — `S2_case_1_report.pdf` (full audience-tailored pipeline report, Case 1)
+- Supplementary Material S3 — `S3_case_2_report.pdf` (full audience-tailored pipeline report, Case 2)
 
 ## Suggested reviewers
 
@@ -66,8 +65,8 @@ Sincerely,
 
 **Astri J. Lundervold, PhD** *(corresponding author)*
 Department of Clinical and Biological Psychology, University of Bergen
-Christies gate 12, 5015 Bergen, Norway
-Email: astri.lundervold@uib.no
+Christiesgate 12, 5015 Bergen, Norway
+Email: Astri.Lundervold@uib.no
 ORCID: 0000-0002-6819-6164
 
 on behalf of co-authors Birgitte Berentsen and Arvid Lundervold
