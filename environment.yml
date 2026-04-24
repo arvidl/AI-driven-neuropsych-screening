@@ -16,3 +16,8 @@ dependencies:
   - ipython>=8.0
   - ipykernel>=6.0
   - pytest>=7.0
+  # Manuscript tooling (used by manuscript/build_jins_docx.py and
+  # manuscript/build_cover_letter_docx.py to regenerate the JINS-compliant
+  # Word manuscript and cover letter from the LaTeX source)
+  - python-docx>=1.1
+  - pillow>=10.0

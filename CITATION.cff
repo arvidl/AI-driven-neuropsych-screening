@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or the accompanying manuscript, please cite both
+  the article (preferred citation, below) and this software repository.
+title: "AI-driven neuropsychological screening pipeline"
+abstract: >-
+  Reference implementation of a deterministic, rule-based pipeline for
+  pre-examination screening in clinical neuropsychology, accompanying the
+  manuscript "An AI-Initiated, Rule-Based Pipeline for Pre-Examination
+  Screening in Clinical Neuropsychology". The pipeline integrates five
+  validated screening instruments (BIS, Conners CPT-3, Chalder Fatigue
+  Scale, HADS, RBANS) into a structured eight-step clinical reasoning chain
+  and produces audience-tailored reports for clinical peers, referring
+  physicians, and patients. No AI models are invoked at runtime.
+type: software
+license: MIT
+repository-code: "https://github.com/arvidl/AI-driven-neuropsych-screening"
+url: "https://github.com/arvidl/AI-driven-neuropsych-screening"
+keywords:
+  - clinical decision support
+  - neuropsychology
+  - precision neuropsychology
+  - irritable bowel syndrome
+  - rule-based reasoning
+  - reproducible research
+authors:
+  - family-names: Lundervold
+    given-names: Astri J.
+    orcid: "https://orcid.org/0000-0002-6819-6164"
+    affiliation: "University of Bergen; Haraldsplass Deaconess Hospital, Bergen, Norway"
+  - family-names: Berentsen
+    given-names: Birgitte
+    orcid: "https://orcid.org/0000-0003-3574-7078"
+    affiliation: "Haukeland University Hospital, Bergen, Norway"
+  - family-names: Lundervold
+    given-names: Arvid
+    orcid: "https://orcid.org/0000-0002-0032-4182"
+    affiliation: "University of Bergen; Haukeland University Hospital (MMIV), Bergen, Norway"
+preferred-citation:
+  type: article
+  title: "An AI-Initiated, Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology"
+  year: 2026
+  journal: "Journal of the International Neuropsychological Society"
+  notes: "Submitted to the Special Issue on Artificial Intelligence in Neuropsychology"
+  authors:
+    - family-names: Lundervold
+      given-names: Astri J.
+      orcid: "https://orcid.org/0000-0002-6819-6164"
+    - family-names: Berentsen
+      given-names: Birgitte
+      orcid: "https://orcid.org/0000-0003-3574-7078"
+    - family-names: Lundervold
+      given-names: Arvid
+      orcid: "https://orcid.org/0000-0002-0032-4182"
