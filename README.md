@@ -12,11 +12,14 @@ Paper-and-code repository for the blinded neuropsychological screening pipeline 
 - The two manuscript-linked blinded example outputs:
   `output_subj/subj_001/` and `output_subj/subj_048/`
 - The manuscript sources and compiled PDF:
-  `JINS/jins_main.tex`, `JINS/jins_references.bib`, `JINS/jins_main.pdf`
+  `manuscript/jins_main.tex`, `manuscript/jins_references.bib`, `manuscript/jins_main.pdf`
 - The supplementary sources and compiled PDFs:
-  `JINS/supplementary/`, `JINS/supplementary_methods.pdf`
-- The anonymized case reports:
-  `JINS/case_1_report.pdf`, `JINS/case_2_report.pdf`
+  `manuscript/supplementary/` (LaTeX sources + compiled PDF)
+- The journal-deliverable bundle (Word manuscript, cover letter, renamed
+  figures and supplementary PDFs):
+  `manuscript/submission/`
+- The anonymized case reports (also shipped as supplementary S2/S3):
+  `manuscript/supplementary/case_1_report.pdf`, `manuscript/supplementary/case_2_report.pdf`
 - The original Table 1 notebook retained for provenance:
   `notebooks/01_table_1_generation.ipynb`
 - A blinded-only notebook for the reproducible subset of Table 1:
@@ -32,15 +35,15 @@ This repository is designed around the public-safe blinded dataset. It fully sup
 
 This repository also ships canonical paper artifacts that are preserved as-is:
 
-- `JINS/jins_main.pdf`
-- `JINS/supplementary_methods.pdf`
-- `JINS/supplementary/supplementary.pdf`
-- `JINS/case_1_report.pdf`
-- `JINS/case_2_report.pdf`
+- `manuscript/jins_main.pdf`
+- `manuscript/supplementary/supplementary.pdf`
+- `manuscript/submission/supplementary/S1_supplementary_methods.pdf`
+- `manuscript/submission/supplementary/S2_case_1_report.pdf`
+- `manuscript/submission/supplementary/S3_case_2_report.pdf`
 
 ## Table 1 Note
 
-The published Table 1 in `JINS/jins_main.tex` is kept unchanged.
+The published Table 1 in `manuscript/jins_main.tex` is kept unchanged.
 
 The new notebook `notebooks/02_table_1_generation_blinded.ipynb` reproduces the subset of Table 1 that is derivable from the blinded dataset only:
 
@@ -133,27 +136,45 @@ That notebook loads `data/BGA_merged_all_20260208_cleaned_for_analysis_blinded.c
 Main manuscript:
 
 ```bash
-cd JINS
+cd manuscript
 latexmk -pdf jins_main.tex
 ```
 
 Supplementary document:
 
 ```bash
-cd JINS/supplementary
+cd manuscript/supplementary
 latexmk -pdf supplementary.tex
 ```
+
+JINS-compliant Word manuscript and cover letter (regenerated from the LaTeX
+source by the helper scripts; requires `python-docx` and `pillow`, both
+included in `environment.yml`):
+
+```bash
+cd manuscript
+python build_jins_docx.py
+python build_cover_letter_docx.py
+```
+
+The resulting `.docx` files land in `manuscript/submission/`.
 
 The manuscript source expects the blinded figure files in `output_subj/subj_001/` and `output_subj/subj_048/`.
 
 ## Repository Layout
 
-- `data/`: blinded analysis-ready cohort CSV
+- `data/`: blinded analysis-ready cohort CSV (see `data/README.md` for the
+  data dictionary and ethics scope)
 - `scripts/`: blinded neuropsych pipeline code
 - `notebooks/`: manuscript provenance notebook plus blinded public notebook
 - `output_subj/`: tracked example outputs for `subj_001` and `subj_048`
-- `JINS/`: manuscript, references, supplementary material, and compiled artifacts
+- `manuscript/`: LaTeX source, references, compiled PDF, supplementary
+  source, and the journal-deliverable bundle under `manuscript/submission/`
+  (Word manuscript, cover letter, renamed figures, and the three
+  supplementary PDFs)
 - `tests/`: blinded pipeline smoke tests
+- `CITATION.cff`: machine-readable citation metadata (powers the
+  GitHub "Cite this repository" button)
 
 ## Release Checklist
 
