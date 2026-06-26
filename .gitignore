@@ -57,6 +57,12 @@ JINS/
 # Working notes that should never be public
 submission_advice.txt
 
+# --- Private (non-blinded) source data — NEVER commit ---
+# The full cohort file contains data beyond the released blinded subset.
+# Kept locally so notebooks/01_table_1_generation.ipynb can run; the public
+# repo ships only data/BGA_merged_all_20260208_cleaned_for_analysis_blinded.csv.
+data/BGA_merged_all_20260208_cleaned.csv
+
 # Annotated co-author copies
 *_astri.pdf
 
@@ -82,3 +88,6 @@ manuscript/supplementary_methods.pdf
 
 # JINS revision journal proof is Cambridge-copyrighted; keep locally, never commit
 Revision/draft_Proof_hi.pdf
+
+# LaTeX font/cache directories (TEXMFVAR redirect during local builds)
+**/.texcache/
