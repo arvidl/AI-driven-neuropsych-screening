@@ -20,10 +20,13 @@ Paper-and-code repository for the blinded neuropsychological screening pipeline 
   `manuscript/submission/`
 - The anonymized case reports (also shipped as supplementary S2/S3):
   `manuscript/supplementary/case_1_report.pdf`, `manuscript/supplementary/case_2_report.pdf`
-- The original Table 1 notebook retained for provenance:
-  `notebooks/01_table_1_generation.ipynb`
+- The documented data-cleaning notebook (raw → cleaned → analysis → blinded),
+  the narrated companion to `scripts/clean_cohort_data.py`:
+  `notebooks/01_clean_cohort_data.ipynb`
+- The full-cohort Table 1 notebook retained for provenance:
+  `notebooks/02_table_1_generation.ipynb`
 - A blinded-only notebook for the reproducible subset of Table 1:
-  `notebooks/02_table_1_generation_blinded.ipynb`
+  `notebooks/03_table_1_generation_blinded.ipynb`
 
 ## Reproducibility Scope
 
@@ -45,7 +48,7 @@ This repository also ships canonical paper artifacts that are preserved as-is:
 
 The published Table 1 in `manuscript/jins_main.tex` is kept unchanged.
 
-The new notebook `notebooks/02_table_1_generation_blinded.ipynb` reproduces the subset of Table 1 that is derivable from the blinded dataset only:
+The new notebook `notebooks/03_table_1_generation_blinded.ipynb` reproduces the subset of Table 1 that is derivable from the blinded dataset only:
 
 - age
 - female percentage
@@ -59,7 +62,7 @@ Two parts of the published Table 1 are not reproducible from the blinded CSV alo
 - `Education`
 - RBANS index-score rows
 
-The original `notebooks/01_table_1_generation.ipynb` is included for manuscript provenance, but it expects a non-public cleaned cohort file and is not the primary public reproduction path in this repository.
+The full-cohort `notebooks/02_table_1_generation.ipynb` is included for manuscript provenance, but it expects a non-public cleaned cohort file and is not the primary public reproduction path in this repository.
 
 ## Environment Setup
 
@@ -127,7 +130,7 @@ manuscript-linked subject outputs.
 
 Start Jupyter and open:
 
-- `notebooks/02_table_1_generation_blinded.ipynb`
+- `notebooks/03_table_1_generation_blinded.ipynb`
 
 That notebook loads `data/BGA_merged_all_20260208_cleaned_for_analysis_blinded.csv`, computes the reproducible subset of Table 1, displays a manuscript-style summary table, and emits LaTeX for the subset only.
 

@@ -58,10 +58,18 @@ JINS/
 submission_advice.txt
 
 # --- Private (non-blinded) source data — NEVER commit ---
-# The full cohort file contains data beyond the released blinded subset.
-# Kept locally so notebooks/01_table_1_generation.ipynb can run; the public
+# The full cohort files contain data beyond the released blinded subset.
+# Kept locally so notebooks/01_clean_cohort_data.ipynb and 02_table_1_generation.ipynb can run; the public
 # repo ships only data/BGA_merged_all_20260208_cleaned_for_analysis_blinded.csv.
+data/BGA_merged_all_20260208.csv
 data/BGA_merged_all_20260208_cleaned.csv
+data/BGA_merged_all_20260208_cleaned_for_analysis.csv
+data/reproduced/
+# Conners CPT-3 export (raw instrument source)
+data/CPT_3_main_variables_baseline.xlsx
+# Provenance bundle: raw instrument sources + the merge/reconstruction script.
+# Self-contained for local reproducibility; never committed (sensitive data).
+data/_sources/
 
 # Annotated co-author copies
 *_astri.pdf

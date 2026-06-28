@@ -60,7 +60,7 @@ they could not be released in blinded form:
   Scale index
 
 These rows are kept in the published Table 1 for record but are not
-recomputed by `notebooks/02_table_1_generation_blinded.ipynb`.
+recomputed by `notebooks/03_table_1_generation_blinded.ipynb`.
 
 ## Reproducibility scope
 
