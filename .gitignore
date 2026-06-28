@@ -29,6 +29,10 @@ ENV/
 *.synctex.gz
 *.fdb_latexmk
 *.fls
+*.xdv
+
+# docx->tex reanchoring intermediates (rendered PDFs/text)
+manuscript/.reanchor_work/
 *.bbl
 *.blg
 *.bcf
