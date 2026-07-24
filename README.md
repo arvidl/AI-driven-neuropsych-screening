@@ -2,29 +2,15 @@
 
 _Astri J. Lundervold, Birgitte Berentsen, and Arvid Lundervold:_ <br>**"An AI-Assisted, Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology: An Exploratory Method-Development Study"** (revised manuscript, resubmitted to the Journal of the International Neuropsychological Society, JINS)
 
-Paper-and-code repository for the blinded neuropsychological screening pipeline and the manuscript artifacts built around it.
+Paper-and-code repository for the blinded neuropsychological screening pipeline described in the paper above.
 
 ## What This Repo Contains
 
 - The blinded analysis dataset: `data/BGA_merged_all_20260208_cleaned_for_analysis_blinded.csv`
 - The standalone subject-processing pipeline:
   `scripts/neuropsych_pipeline.py` and `scripts/neuropsych_subj_pipeline.py`
-- The two manuscript-linked blinded example outputs:
+- The two blinded example subject outputs linked to the paper:
   `output_subj/subj_001/` and `output_subj/subj_048/`
-- The manuscript sources and compiled PDF:
-  `manuscript/jins_main.tex`, `manuscript/jins_references.bib`, `manuscript/jins_main.pdf`
-- The revised manuscript sources (JINS resubmission, with `\revblue{}` change markup):
-  `manuscript/jins_main_rev.tex`, `manuscript/jins_references_rev.bib`
-- The supplementary sources and compiled PDFs:
-  `manuscript/supplementary/` (LaTeX sources + compiled PDF)
-- The original journal-deliverable bundle (Word manuscript, cover letter, renamed
-  figures and supplementary PDFs):
-  `manuscript/submission/`
-- The JINS revised-resubmission bundle (revised Word manuscript with highlighted
-  changes, point-by-point responses to reviewers, cover letter, and supplementary):
-  `manuscript/resubmission/`
-- The anonymized case reports (also shipped as supplementary S2/S3):
-  `manuscript/supplementary/case_1_report.pdf`, `manuscript/supplementary/case_2_report.pdf`
 - The documented data-cleaning notebook (raw → cleaned → analysis → blinded),
   the narrated companion to `scripts/clean_cohort_data.py`:
   `notebooks/01_clean_cohort_data.ipynb`
@@ -40,20 +26,12 @@ Paper-and-code repository for the blinded neuropsychological screening pipeline 
 This repository is designed around the public-safe blinded dataset. It fully supports:
 
 - regenerating subject-level reports, JSON summaries, and figures from the blinded CSV
-- regenerating the manuscript-linked outputs for `subj_001` and `subj_048`
-- reproducing the blinded-data-supported subset of manuscript Table 1
-
-This repository also ships canonical paper artifacts that are preserved as-is:
-
-- `manuscript/jins_main.pdf`
-- `manuscript/supplementary/supplementary.pdf`
-- `manuscript/submission/supplementary/S1_supplementary_methods.pdf`
-- `manuscript/submission/supplementary/S2_case_1_report.pdf`
-- `manuscript/submission/supplementary/S3_case_2_report.pdf`
+- regenerating the paper-linked outputs for `subj_001` and `subj_048`
+- reproducing the blinded-data-supported subset of the paper's Table 1
 
 ## Table 1 Note
 
-The published Table 1 in `manuscript/jins_main.tex` is kept unchanged.
+The published Table 1 in the paper is kept unchanged.
 
 The new notebook `notebooks/03_table_1_generation_blinded.ipynb` reproduces the subset of Table 1 that is derivable from the blinded dataset only:
 
@@ -105,7 +83,7 @@ jupyter lab
 
 ## External LaTeX Requirements
 
-LaTeX is not installed through `environment.yml`. To rebuild the manuscript and supplementary PDFs you should install a system LaTeX distribution plus `biber` and `latexmk`.
+LaTeX is not installed through `environment.yml`. The subject pipeline compiles each per-subject PDF report with LaTeX, so to produce the `*_report.pdf` files you should install a system LaTeX distribution plus `biber` and `latexmk`.
 
 Typical Linux (Debian / Ubuntu) setup:
 
@@ -213,36 +191,6 @@ Start Jupyter and open:
 
 That notebook loads `data/BGA_merged_all_20260208_cleaned_for_analysis_blinded.csv`, computes the reproducible subset of Table 1, displays a manuscript-style summary table, and emits LaTeX for the subset only.
 
-## Rebuild Manuscript Artifacts
-
-Main manuscript:
-
-```bash
-cd manuscript
-latexmk -pdf jins_main.tex
-```
-
-Supplementary document:
-
-```bash
-cd manuscript/supplementary
-latexmk -pdf supplementary.tex
-```
-
-JINS-compliant Word manuscript and cover letter (regenerated from the LaTeX
-source by the helper scripts; requires `python-docx` and `pillow`, both
-included in `environment.yml`):
-
-```bash
-cd manuscript
-python build_jins_docx.py
-python build_cover_letter_docx.py
-```
-
-The resulting `.docx` files land in `manuscript/submission/`.
-
-The manuscript source expects the blinded figure files in `output_subj/subj_001/` and `output_subj/subj_048/`.
-
 ## Repository Layout
 
 - `data/`: blinded analysis-ready cohort CSV (see `data/README.md` for the
@@ -250,10 +198,6 @@ The manuscript source expects the blinded figure files in `output_subj/subj_001/
 - `scripts/`: blinded neuropsych pipeline code
 - `notebooks/`: manuscript provenance notebook plus blinded public notebook
 - `output_subj/`: tracked example outputs for `subj_001` and `subj_048`
-- `manuscript/`: LaTeX source, references, compiled PDF, supplementary
-  source, and the journal-deliverable bundle under `manuscript/submission/`
-  (Word manuscript, cover letter, renamed figures, and the three
-  supplementary PDFs)
 - `tests/`: blinded pipeline smoke tests
 - `CITATION.cff`: machine-readable citation metadata (powers the
   GitHub "Cite this repository" button)
@@ -265,4 +209,3 @@ Before tagging a release, confirm:
 - `./scripts/release_check.sh` passes in a fresh environment
 - the working tree contains only intentional tracked artifacts
 - the blinded CLI examples in this README still run as written
-- manuscript rebuilds are verified if TeX sources or figures changed

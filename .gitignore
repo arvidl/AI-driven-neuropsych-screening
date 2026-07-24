@@ -53,6 +53,12 @@ output_subj/*
 dist/
 build/
 
+# --- Not published in the public repository ---
+# Manuscript sources/bundles and the revision (rebuttal/cover-letter) working
+# folder are kept locally but excluded from the public repo.
+manuscript/
+Revision/
+
 # --- Manuscript working artefacts (never commit) ---
 # Legacy folder (renamed to manuscript/); kept ignored so the on-disk leftovers
 # do not accidentally re-enter the index.
