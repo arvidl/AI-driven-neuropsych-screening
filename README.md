@@ -11,6 +11,8 @@ Paper-and-code repository for the blinded neuropsychological screening pipeline 
   `scripts/neuropsych_pipeline.py` and `scripts/neuropsych_subj_pipeline.py`
 - The two blinded example subject outputs linked to the paper:
   `output_subj/subj_001/` and `output_subj/subj_048/`
+- The reproducible Figure 1 source (TikZ) and compiled PDF:
+  `figures/figure_1_reasoning_chain.tex`, `figures/figure_1_reasoning_chain.pdf`
 - The documented data-cleaning notebook (raw → cleaned → analysis → blinded),
   the narrated companion to `scripts/clean_cohort_data.py`:
   `notebooks/01_clean_cohort_data.ipynb`
@@ -42,12 +44,35 @@ The new notebook `notebooks/03_table_1_generation_blinded.ipynb` reproduces the 
 - Chalder total
 - HADS anxiety and depression
 
-Two parts of the published Table 1 are not reproducible from the blinded CSV alone and are therefore intentionally not recomputed in the blinded notebook:
+These rows reproduce **exactly** the values reported in the published Table 1
+(the blinded CSV preserves them unchanged).
 
-- `Education`
-- RBANS index-score rows
+Two parts of the published Table 1 are **not** reproducible from the blinded CSV
+alone and are therefore intentionally not recomputed in the blinded notebook:
 
-The full-cohort `notebooks/02_table_1_generation.ipynb` is included for manuscript provenance, but it expects a non-public cleaned cohort file and is not the primary public reproduction path in this repository.
+- `Education` — this variable is not carried in the released blinded dataset
+  (it was dropped during de-identification), so it cannot be recomputed here.
+- RBANS **index-score** rows — these require the proprietary RBANS normative
+  conversion tables, which cannot be redistributed. The blinded dataset ships
+  cohort-standardized RBANS raw subtests instead of the normed indices, so the
+  published index-score rows are not derivable from the public data.
+
+Both omissions are limitations of the *public data release*, not of the method:
+the full-cohort `notebooks/02_table_1_generation.ipynb` reproduces the complete
+Table 1 (all rows, n = 105) but expects the non-public cleaned cohort file, so it
+is retained for provenance rather than as the primary public reproduction path.
+
+## Figures
+
+- **Figure 1** (eight-step reasoning-chain schematic) is a conceptual diagram,
+  reproducible from LaTeX/TikZ source in `figures/` (`figure_1_reasoning_chain.tex`
+  → `figure_1_reasoning_chain.pdf`).
+- **Figures 2–5** (the two illustrative cases' multi-panel and radar plots) are
+  data-driven and regenerate from the blinded dataset via
+  `python scripts/neuropsych_subj_pipeline.py subj_001 subj_048` (written under
+  `output_subj/subj_001/` and `output_subj/subj_048/`).
+
+See `figures/README.md` for details.
 
 ## Environment Setup
 
@@ -198,6 +223,8 @@ That notebook loads `data/BGA_merged_all_20260208_cleaned_for_analysis_blinded.c
 - `scripts/`: blinded neuropsych pipeline code
 - `notebooks/`: manuscript provenance notebook plus blinded public notebook
 - `output_subj/`: tracked example outputs for `subj_001` and `subj_048`
+- `figures/`: reproducible Figure 1 source (TikZ) + compiled PDF; see
+  `figures/README.md`
 - `tests/`: blinded pipeline smoke tests
 - `CITATION.cff`: machine-readable citation metadata (powers the
   GitHub "Cite this repository" button)
