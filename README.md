@@ -14,13 +14,20 @@ Paper-and-code repository for the blinded neuropsychological screening pipeline 
 - The reproducible Figure 1 source (TikZ) and compiled PDF:
   `figures/figure_1_reasoning_chain.tex`, `figures/figure_1_reasoning_chain.pdf`
 - The documented data-cleaning notebook (raw → cleaned → analysis → blinded),
-  the narrated companion to `scripts/clean_cohort_data.py`:
+  the narrated companion to `scripts/clean_cohort_data.py`. It reads the
+  non-public raw cohort file and is retained for provenance only (outputs
+  cleared; not runnable from the public repository):
   `notebooks/01_clean_cohort_data.ipynb`
-- The full-cohort Table 1 notebook retained for provenance:
+- The full-cohort Table 1 notebook retained for provenance (requires the
+  non-public cleaned cohort file; outputs cleared):
   `notebooks/02_table_1_generation.ipynb`
-- A blinded-only notebook for the reproducible subset of Table 1:
+- A blinded-only notebook for the reproducible subset of Table 1 (the only
+  notebook runnable from the public blinded dataset):
   `notebooks/03_table_1_generation_blinded.ipynb`
-- A results/robustness notebook (raw-vs-cleaned stability + flag-handling policy):
+- A results/robustness notebook (raw-vs-cleaned stability + flag-handling
+  policy). It compares the non-public raw and cleaned cohort files and is
+  retained for provenance only (outputs cleared; not runnable from the public
+  repository):
   `notebooks/04_cleaned_data_results.ipynb`
 
 ## Reproducibility Scope
