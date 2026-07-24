@@ -1,5 +1,10 @@
 # AI-driven-neuropsych-screening
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Runtime: deterministic · no AI](https://img.shields.io/badge/runtime-deterministic%20%C2%B7%20no%20AI-blue.svg)](docs/prompt_provenance.md)
+[![Results: reproducible](https://img.shields.io/badge/results-reproducible-brightgreen.svg)](#reproducibility-across-machines)
+[![Cite this repository](https://img.shields.io/badge/cite-CITATION.cff-informational.svg)](CITATION.cff)
+
 _Astri J. Lundervold, Birgitte Berentsen, and Arvid Lundervold:_ <br>**"An AI-Assisted, Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology: An Exploratory Method-Development Study"** (revised manuscript, resubmitted to the Journal of the International Neuropsychological Society, JINS)
 
 Paper-and-code repository for the blinded neuropsychological screening pipeline described in the paper above.
@@ -173,6 +178,22 @@ are documented separately in `docs/`:
 > line. The deployed pipeline contains **no model, no AI client library, and no
 > network calls**, and **no real or identifiable patient data were ever sent to any
 > model**. This is why results are fully deterministic and reproducible.
+
+## Model & Data Card
+
+A compact card for the pipeline; see `docs/` and `data/README.md` for detail.
+
+| | |
+|---|---|
+| **System** | Deterministic, rule-based decision-*support* pipeline for pre-examination neuropsychological screening; integrates five validated instruments (BIS, Conners CPT-3, Chalder Fatigue Scale, HADS, RBANS) into an eight-step reasoning chain with audience-tailored reports. |
+| **Runtime AI** | **None** — no model, AI client library, or network call at runtime; fully deterministic. |
+| **Development-time AI** | Claude Opus 4.6 then GPT-5.4 (via Cursor) used to *draft* code, author-verified line by line — see [`docs/prompt_provenance.md`](docs/prompt_provenance.md). |
+| **Rules** | Published instrument cutoffs, locked to source values — see [`docs/rules.md`](docs/rules.md). |
+| **Public data** | Blinded, de-identified cohort CSV (N = 105); `Education` and RBANS index scores intentionally withheld — see [`data/README.md`](data/README.md). |
+| **Non-public data** | Raw/cleaned cohort files with identifiers are **not** distributed, per the study's ethics approval and data-protection constraints. |
+| **Intended use** | Research and methods demonstration; screening decision support with a clinician in the loop. |
+| **Out of scope** | Not a medical device; not diagnostic; not validated for autonomous clinical use; all outputs require expert review. |
+| **License / cite** | MIT (`LICENSE`); citation metadata in `CITATION.cff` — see [Citing This Work](#citing-this-work). |
 
 ## Environment Setup
 
@@ -363,3 +384,13 @@ Before tagging a release, confirm:
 - `./scripts/release_check.sh` passes in a fresh environment
 - the working tree contains only intentional tracked artifacts
 - the blinded CLI examples in this README still run as written
+
+## Citing This Work
+
+If you use this repository or the accompanying manuscript, please cite **both**:
+
+- **Software** — this repository. GitHub's "Cite this repository" button renders
+  APA/BibTeX from [`CITATION.cff`](CITATION.cff).
+- **Article** — Lundervold AJ, Berentsen B, Lundervold A. *Journal of the
+  International Neuropsychological Society* (submitted, 2026). The exact title and
+  author metadata are recorded in [`CITATION.cff`](CITATION.cff).
