@@ -2261,12 +2261,12 @@ if __name__ == "__main__":
                "  python neuropsych_pipeline.py subj_001\n"
                "  python neuropsych_pipeline.py subj_001 subj_048\n"
                "  python neuropsych_pipeline.py --all --batch-size 5\n"
-               "  python neuropsych_pipeline.py --data /path/to/full_cohort.csv subj_001\n",
+               "  python neuropsych_pipeline.py --data /path/to/full_cohort.csv BGA_XXX\n",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument(
         "patients", nargs="*",
-        help="Record ID(s) to process (for example subj_001 or subj_001, depending on the selected cohort file). "
+        help="Record ID(s) to process (for example subj_001 or BGA_XXX, depending on the selected cohort file). "
              "If omitted, processes the first record only.",
     )
     parser.add_argument(
