@@ -38,6 +38,78 @@ This repository is designed around the public-safe blinded dataset. It fully sup
 - regenerating the paper-linked outputs for `subj_001` and `subj_048`
 - reproducing the blinded-data-supported subset of the paper's Table 1
 
+## Quickstart — Reproduce the Results
+
+End-to-end walkthrough from a clean machine to regenerated numbers, tables,
+figures, and reports. Steps 1–5 need only Python; step 6 additionally needs a
+LaTeX toolchain (for the typeset `*_report.pdf` files). Each step links to a
+detailed section below.
+
+**Prerequisites:** `git` and a conda distribution (Miniforge / Miniconda /
+Anaconda).
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/arvidl/AI-driven-neuropsych-screening.git
+cd AI-driven-neuropsych-screening
+```
+
+2. **Create and activate the pinned environment** (see
+   [Environment Setup](#environment-setup) for a pip/venv alternative):
+
+```bash
+conda env create -f environment.yml
+conda activate ai-driven-neuropsych-screening
+```
+
+The version pins (notably `seaborn<0.13`) are required to reproduce the
+committed figures — see [Reproducibility Across Machines](#reproducibility-across-machines).
+
+3. **(Optional) install a system LaTeX toolchain** if you want the typeset PDF
+   reports — see [External LaTeX Requirements](#external-latex-requirements).
+   Skip this to reproduce the numbers and figures without the `*_report.pdf`.
+
+4. **Run the smoke tests and regenerate the two manuscript-linked cases** in one
+   command:
+
+```bash
+./scripts/release_check.sh
+```
+
+This runs `pytest tests/test_blinded_pipeline.py` and regenerates
+`output_subj/subj_001/` and `output_subj/subj_048/` (figures, `*_report.json`,
+`*_report.tex`, and `*_report.pdf` if LaTeX is installed).
+
+5. **Verify your run matches the committed artifacts bit-for-bit** (numbers +
+   report text):
+
+```bash
+git status --short -- 'output_subj/subj_001/*.json' 'output_subj/subj_001/*.tex' \
+                      'output_subj/subj_048/*.json' 'output_subj/subj_048/*.tex'
+# empty output => your run reproduced the committed deterministic results
+```
+
+6. **Reproduce the blinded subset of the paper's Table 1** — launch Jupyter and
+   run the notebook top to bottom (see
+   [Reproduce The Blinded Table 1 Subset](#reproduce-the-blinded-table-1-subset)):
+
+```bash
+jupyter lab   # open and run notebooks/03_table_1_generation_blinded.ipynb
+```
+
+**Optional — full blinded cohort** (all 105 subjects, ~8–14 min):
+
+```bash
+python scripts/neuropsych_subj_pipeline.py --all
+```
+
+**What reproduces from the public repo:** all numeric values and the Table 1
+subset (exactly), the two case figures (manuscript Figures 2–5) and per-subject
+reports, and Figure 1 from its TikZ source. **What does not:** the `Education`
+and RBANS index-score rows of Table 1, which require non-public data — see
+[Table 1 Note](#table-1-note).
+
 ## Table 1 Note
 
 The published Table 1 in the paper is kept unchanged.
@@ -101,8 +173,8 @@ conda activate ai-driven-neuropsych-screening
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
-pip install "numpy>=1.24" "pandas>=2.0" "scipy>=1.10" "matplotlib>=3.7" \
-            "seaborn>=0.13" "python-docx>=1.1" "pillow>=10.0" \
+pip install "numpy>=1.24,<2" "pandas>=2.0,<3" "scipy>=1.10" "matplotlib>=3.7,<3.9" \
+            "seaborn>=0.12,<0.13" "pillow>=10.0" \
             jupyterlab ipykernel pytest
 ```
 
