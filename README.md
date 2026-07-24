@@ -178,6 +178,25 @@ pip install "numpy>=1.24,<2" "pandas>=2.0,<3" "scipy>=1.10" "matplotlib>=3.7,<3.
             jupyterlab ipykernel pytest
 ```
 
+### Exact-version lock (fully deterministic install)
+
+For the strongest install determinism, `requirements-lock.txt` pins the **exact**
+versions of every package (generated and verified on Ubuntu / CPython 3.11):
+
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-lock.txt
+```
+
+This guarantees an identical package set on every install and reproduces the
+numeric/report outputs **byte-for-byte**. Figures render from the intended
+seaborn 0.12 stack; they are visually equivalent but, like all Matplotlib
+output, not guaranteed pixel-identical across operating systems / native font
+(FreeType) builds. The conda `environment.yml` above remains the primary
+cross-platform path; use the lock file when you need a frozen, exact-version
+environment.
+
 For notebook work (either setup):
 
 ```bash
@@ -269,10 +288,10 @@ and comparing against the committed outputs, which were produced on macOS
 - `subj_001` and `subj_048` `*_report.json` (all computed statistics) and
   `*_report.tex` (the LaTeX report) regenerate **byte-for-byte identically** on
   Ubuntu 24.04 (Dell Precision 7560, Intel Xeon W-11955M) and on the MacBook Pro.
-  The match held even though the Linux run used a different Python/library build
-  than `environment.yml` pins (Python 3.9 with NumPy 1.24 / pandas 2.1 /
-  SciPy 1.9 / Matplotlib 3.8), which underscores that the numeric results do not
-  depend on the platform or exact library versions.
+  This match held even when the Linux check ran on an interpreter whose library
+  versions differed from those `environment.yml` pins, underscoring that the
+  numeric/report results do not depend on the platform or exact library versions
+  (the figures do — see the next bullet).
 - The figures (`*.png`, `*.pdf`) are **visually identical** across platforms when
   built from the pinned plotting stack (seaborn 0.12.x, Matplotlib 3.8), though
   not byte-identical because font rasterization and embedded PDF metadata differ
