@@ -153,6 +153,27 @@ is retained for provenance rather than as the primary public reproduction path.
 
 See `figures/README.md` for details.
 
+## Method: AI-Assisted Development & Rule Set
+
+This is an **AI-assisted, rule-based** pipeline, and the two halves of that phrase
+are documented separately in `docs/`:
+
+- **`docs/prompt_provenance.md`** — how the pipeline was *produced*: the iterative,
+  clinician-led design brief and the verbatim original/updated/system prompts that
+  drove the development-time assistants (Claude Opus 4.6, then GPT-5.4 in Cursor) to
+  generate `scripts/neuropsych_pipeline.py`, plus the human-in-the-loop review and
+  model cards.
+- **`docs/rules.md`** — what the pipeline *runs*: the deterministic classification
+  thresholds (HADS, BIS, Chalder, CPT, RBANS), the eight QC data-quality flags, the
+  eight-step clinical reasoning chain, the cohort-relative percentile/z-score
+  context, and the three audience-tailored views — each with code references.
+
+> **AI at development time only, not at runtime.** The prompts and assistants were
+> used to *draft* the code, which the authors then verified and corrected line by
+> line. The deployed pipeline contains **no model, no AI client library, and no
+> network calls**, and **no real or identifiable patient data were ever sent to any
+> model**. This is why results are fully deterministic and reproducible.
+
 ## Environment Setup
 
 The pipeline is pure Python (NumPy / pandas / SciPy / Matplotlib / Seaborn) and
@@ -325,6 +346,8 @@ That notebook loads `data/BGA_merged_all_20260208_cleaned_for_analysis_blinded.c
 - `data/`: blinded analysis-ready cohort CSV (see `data/README.md` for the
   data dictionary and ethics scope)
 - `scripts/`: blinded neuropsych pipeline code
+- `docs/`: method documentation — `prompt_provenance.md` (AI-assisted development
+  + verbatim prompts) and `rules.md` (deterministic rule set / thresholds)
 - `notebooks/`: manuscript provenance notebook plus blinded public notebook
 - `output_subj/`: tracked example outputs for `subj_001` and `subj_048`
 - `figures/`: reproducible Figure 1 source (TikZ) + compiled PDF; see
