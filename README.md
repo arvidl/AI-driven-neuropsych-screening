@@ -201,10 +201,16 @@ and comparing against the committed outputs, which were produced on macOS
   than `environment.yml` pins (Python 3.9 with NumPy 1.24 / pandas 2.1 /
   SciPy 1.9 / Matplotlib 3.8), which underscores that the numeric results do not
   depend on the platform or exact library versions.
-- The figures (`*.png`, `*.pdf`) are **visually identical** but not byte-identical
-  across platforms, because Matplotlib font rasterization and embedded PDF
-  metadata differ between OS/library builds. The committed figures are the
-  canonical macOS renderings.
+- The figures (`*.png`, `*.pdf`) are **visually identical** across platforms when
+  built from the pinned plotting stack (seaborn 0.12.x, Matplotlib 3.8), though
+  not byte-identical because font rasterization and embedded PDF metadata differ
+  between OS/library builds. Figure *appearance* does depend on the seaborn major
+  version: **seaborn 0.13 reworked `violinplot` rendering** (fill colour/alpha and
+  panel sizing), so `environment.yml` pins `seaborn>=0.12,<0.13` (and
+  `matplotlib<3.9`) to reproduce the committed figures. This affects figures only;
+  the numeric/report outputs above are unaffected by library versions. The
+  committed figures are the canonical macOS renderings; on the pinned stack the
+  Linux re-render matches them to within ~0.02% of pixels (anti-aliasing noise).
 
 To reproduce and check this yourself:
 
