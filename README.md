@@ -5,8 +5,7 @@
 [![Results: reproducible](https://img.shields.io/badge/results-reproducible-brightgreen.svg)](#reproducibility-across-machines)
 [![Cite this repository](https://img.shields.io/badge/cite-CITATION.cff-informational.svg)](CITATION.cff)
 
-_Astri J. Lundervold, Birgitte Berentsen, and Arvid Lundervold:_ <br>**"AI-Assisted Development of a Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology: An Exploratory Method-Development Study<img width="468" height="83" alt="image" src="https://github.com/user-attachments/assets/d8a96a19-9e1d-40e5-a6d3-782e736e2da2" />
-"** (to appear in Journal of the International Neuropsychological Society, JINS)
+_Astri J. Lundervold, Birgitte Berentsen, and Arvid Lundervold:_ <br>**"AI-Assisted Development of a Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology: An Exploratory Method-Development Study"** (to appear in Journal of the International Neuropsychological Society, JINS)
 
 Paper-and-code repository for the blinded neuropsychological screening pipeline described in the paper above.
 
