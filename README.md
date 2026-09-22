@@ -5,7 +5,8 @@
 [![Results: reproducible](https://img.shields.io/badge/results-reproducible-brightgreen.svg)](#reproducibility-across-machines)
 [![Cite this repository](https://img.shields.io/badge/cite-CITATION.cff-informational.svg)](CITATION.cff)
 
-_Astri J. Lundervold, Birgitte Berentsen, and Arvid Lundervold:_ <br>**"An AI-Assisted, Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology: An Exploratory Method-Development Study"** (revised manuscript, resubmitted to the Journal of the International Neuropsychological Society, JINS)
+_Astri J. Lundervold, Birgitte Berentsen, and Arvid Lundervold:_ <br>**"AI-Assisted Development of a Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology: An Exploratory Method-Development Study<img width="468" height="83" alt="image" src="https://github.com/user-attachments/assets/d8a96a19-9e1d-40e5-a6d3-782e736e2da2" />
+"** (to appear in Journal of the International Neuropsychological Society, JINS)
 
 Paper-and-code repository for the blinded neuropsychological screening pipeline described in the paper above.
 
@@ -392,5 +393,5 @@ If you use this repository or the accompanying manuscript, please cite **both**:
 - **Software** — this repository. GitHub's "Cite this repository" button renders
   APA/BibTeX from [`CITATION.cff`](CITATION.cff).
 - **Article** — Lundervold AJ, Berentsen B, Lundervold A. *Journal of the
-  International Neuropsychological Society* (submitted, 2026). The exact title and
+  International Neuropsychological Society* (accepted, 2026). The exact title and
   author metadata are recorded in [`CITATION.cff`](CITATION.cff).
