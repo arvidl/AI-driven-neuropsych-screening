@@ -6,10 +6,8 @@ title: "AI-driven neuropsychological screening pipeline"
 abstract: >-
   Reference implementation of a deterministic, rule-based pipeline for
   pre-examination screening in clinical neuropsychology, accompanying the
-  manuscript "An AI-Assisted, Rule-Based Pipeline for Pre-Examination
-  Screening in Clinical Neuropsychology: An Exploratory Method-Development
-  Study". The pipeline integrates five
-  validated screening instruments (BIS, Conners CPT-3, Chalder Fatigue
+  manuscript "AI-Assisted Development of a Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology: An Exploratory Method-Development Study". 
+  The pipeline integrates five validated screening instruments (BIS, Conners CPT-3, Chalder Fatigue
   Scale, HADS, RBANS) into a structured eight-step clinical reasoning chain
   and produces audience-tailored reports for clinical peers, referring
   physicians, and patients. No AI models are invoked at runtime.
@@ -41,10 +39,10 @@ authors:
     affiliation: "University of Bergen; Haukeland University Hospital (MMIV), Bergen, Norway"
 preferred-citation:
   type: article
-  title: "An AI-Assisted, Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology: An Exploratory Method-Development Study"
+  title: "AI-Assisted Development of a Rule-Based Pipeline for Pre-Examination Screening in Clinical Neuropsychology: An Exploratory Method-Development Study"
   year: 2026
   journal: "Journal of the International Neuropsychological Society"
-  notes: "Submitted to the Special Issue on Artificial Intelligence in Neuropsychology"
+  notes: "Accepted for the Special Issue on Artificial Intelligence in Neuropsychology"
   authors:
     - family-names: Lundervold
       given-names: Astri J.
